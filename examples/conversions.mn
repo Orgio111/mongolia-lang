@@ -1,0 +1,5 @@
+// Minimum compiler 0.2.0-dev.1
+fn main() {
+    let count = i64(3.9);
+    print([[f64(count)]] @ [[2.0]]);
+}

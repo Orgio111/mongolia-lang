@@ -1,5 +1,9 @@
 # Mongolia v0.1.1 release limits
 
+## Development branch
+
+HIR represents one source module and straight-line statements. External hand-built ASTs must carry ordered expression spans within their enclosing function. The interpreter still executes the verified AST. Symbolic and dynamic axes have a Rust constraint interface only. Compound user types, aliases, generic instantiation, pattern matching, mutable places, VM, AD and native lowering require later implementations. Phase 10 platform, signing and public release gates remain open. The measurements in PERFORMANCE_COMPARISON.md cover one Linux host and one compiler-input fixture.
+
 The language and resource limits below also apply to compiler 0.1.2. [Platform support](PLATFORM_SUPPORT_MATRIX.md) and [release readiness](RELEASE_READINESS.md) supersede the Phase 9 distribution status.
 
 | Boundary | Observed behavior and consequence |

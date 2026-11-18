@@ -6,6 +6,14 @@ pub fn render_detail(error: &Error, lang: &str) -> String {
         return error.detail.clone();
     }
     let detail = error.detail.as_str();
+    if let Some(types) = detail
+        .strip_prefix("cannot convert ")
+        .and_then(|s| s.strip_suffix("; use i64 or f64"))
+    {
+        if let Some((from, to)) = types.split_once(" to ") {
+            return format!("{from} төрлөөс {to} төрөлд хөрвүүлэх боломжгүй. бүхэл64 эсвэл бодит64 төрлийн утга хэрэглэнэ үү.");
+        }
+    }
     let exact = match detail {
         "value outside i64 conversion range" => {
             Some("Утга бүхэл64 төрөлд хөрвүүлэх хязгаараас хэтэрсэн")

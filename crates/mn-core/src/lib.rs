@@ -3,3 +3,4 @@ pub mod engine;
 pub mod frontend;
 
 pub mod diagnostics;
+pub mod shape;

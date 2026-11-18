@@ -1,0 +1,150 @@
+$ python3 scripts/verify.py
+$ cargo build --workspace --locked
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.00s
+$ cargo test --workspace --locked
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.00s
+     Running unittests src/main.rs (../p11-target/debug/build/mn-cli/50533521c9863d7e/out/mn-50533521c9863d7e)
+
+running 1 test
+test scaffold::tests::init_rolls_back_only_files_it_created_and_allows_retry ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/cli.rs (../p11-target/debug/build/mn-cli/b8f5c7b42649edb7/out/cli-b8f5c7b42649edb7)
+
+running 15 tests
+test diagnostic_unicode_line_separator_is_inert ... ok
+test init_rejects_unknown_options_without_creating_a_directory ... ok
+test invalid_utf8 ... ok
+test init_refuses_dangling_source_without_creating_manifest ... ok
+test long_unicode_diagnostics_keep_real_column_and_bound_the_excerpt ... ok
+test init_preserves_existing_files ... ok
+test diagnostic_excerpt_keeps_control_characters_inert ... ok
+test input_errors_report_the_byte_offset_and_limit_in_mongolian ... ok
+test unsupported_command ... ok
+test utf8_program_loads_from_a_non_utf8_path ... ok
+test acceptance_a_b_c_e ... ok
+test validation_is_not_execution ... ok
+test shape_error_prevents_output ... ok
+test negative_programs ... ok
+test partial_utf8_sequences_preserve_offset_and_exit_status ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running unittests src/lib.rs (../p11-target/debug/build/mn-core/fb899315cd69ef85/out/mn_core-fb899315cd69ef85)
+
+running 30 tests
+test engine::checker::hir_tests::phase11_stage_times ... ignored, release timing probe
+test diagnostics::tests::shape_catalog_keeps_evidence ... ok
+test engine::tensor::tests::buffer_allocator_defends_the_final_reservation_boundary ... ok
+test engine::tests::allocation_size_overflow_is_rejected ... ok
+test engine::tests::arithmetic ... ok
+test engine::checker::hir_tests::original_spans_survive_nfc_and_lowering ... ok
+test engine::checker::hir_tests::verifier_rejects_invalid_hir ... ok
+test engine::tests::checked_integers ... ok
+test engine::tests::bilingual ... ok
+test engine::tests::float_division_is_ieee ... ok
+test engine::tests::functions ... ok
+test engine::tests::invalid_shapes ... ok
+test engine::tests::errors ... ok
+test frontend::parser::bench_tests::stage_measurements ... ignored, measurement, run via scripts/phase8_benchmark.py
+test engine::tests::validate_unused_functions ... ok
+test engine::tests::tensor_identity_and_shape_properties ... ok
+test frontend::tests::bilingual ... ok
+test frontend::tests::confusable_collision ... ok
+test engine::tests::recursion_is_bounded ... ok
+test engine::tests::matmul ... ok
+test frontend::tests::mixed_identifier_rejected ... ok
+test frontend::tests::malformed ... ok
+test engine::tests::mixed ... ok
+test frontend::tests::precedence ... ok
+test frontend::tests::type_and_call ... ok
+test frontend::tests::depth_limit ... ok
+test frontend::tests::nfc ... ok
+test frontend::tests::unicode_spans ... ok
+test engine::tests::differential_small_matrices ... ok
+test engine::tests::integer_arithmetic_matches_checked_reference ... ok
+
+test result: ok. 28 passed; 0 failed; 2 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/checked_program.rs (../p11-target/debug/build/mn-core/74795a1ea9550d8a/out/checked_program-74795a1ea9550d8a)
+
+running 3 tests
+test checker_rejects_invalid_annotation_in_an_externally_assembled_ast ... ok
+test checked_handle_reuses_code_and_resets_execution_state ... ok
+test tensor_print_budget_includes_delimiters_and_final_newline ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running tests/phase11.rs (../p11-target/debug/build/mn-core/a6d4642abed7a2c8/out/phase11-a6d4642abed7a2c8)
+
+running 5 tests
+test symbolic_and_dynamic_axes_require_identity ... ok
+test frame_initialization_and_separate_namespaces ... ok
+test explicit_cast_boundaries_and_errors ... ok
+test canonical_function_ids_slots_and_nfc ... ok
+test generated_bilingual_casts_and_tensor_types ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/phase2.rs (../p11-target/debug/build/mn-core/19de6024b98e2695/out/phase2-19de6024b98e2695)
+
+running 10 tests
+test all_proposed_keyword_aliases_share_canonical_tokens ... ok
+test large_tensor_annotation_fails_in_semantic_validation ... ok
+test lexical_rules_and_normalized_scope ... ok
+test forward_calls_and_argument_effect_order ... ok
+test minimum_integer_and_left_associativity ... ok
+test strings_returned_from_a_call_keep_their_values ... ok
+test negation_and_subtraction_have_distinct_domains ... ok
+test tensor_dimensions_and_result_capacity ... ok
+test exact_source_and_token_caps ... ok
+test exact_work_and_output_caps ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.21s
+
+     Running tests/stabilization.rs (../p11-target/debug/build/mn-core/406c18fc55863e56/out/stabilization-406c18fc55863e56)
+
+running 6 tests
+test externally_supplied_nonfinite_literals_are_rejected ... ok
+test return_mismatch_labels_the_returned_expression ... ok
+test rectangular_matmul_preserves_contraction_order ... ok
+test padded_minimum_has_the_same_integer_value ... ok
+test script_checks_use_normalized_unicode_scripts ... ok
+test mongolian_limits_and_confusable_messages_identify_the_problem ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/stress.rs (../p11-target/debug/build/mn-core/b3d8b8f0adf9f569/out/stress-b3d8b8f0adf9f569)
+
+running 3 tests
+test bilingual_diagnostic_catalog_matches_golden_files ... ok
+test arbitrary_unicode_does_not_panic_and_spans_are_boundaries ... ok
+test mutate_valid_programs_without_panics_or_invalid_spans ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+   Doc-tests mn_core
+
+running 1 test
+test crates/mn-core/src/engine.rs - engine::CheckedProgram (line 33) - compile fail ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+$ cargo fmt --all -- --check
+$ cargo clippy --locked --workspace --all-targets -- -D warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.03s
+PASS examples/functions.mn
+PASS examples/functions_mn.mn
+PASS examples/hello.mn
+PASS examples/hello_mn.mn
+PASS examples/matmul.mn
+PASS examples/matmul_mn.mn
+PASS examples/mixed_syntax.mn
+PASS examples/negative/shape_mismatch.mn
+PASS examples/negative/shape_mismatch_mn.mn
+PASS examples/scalar.mn
+PASS examples/scalar_mn.mn
+PASS examples/conversions.mn
+PASS examples/conversions_mn.mn
+exit 0

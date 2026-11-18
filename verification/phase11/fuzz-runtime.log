@@ -1,0 +1,5 @@
+     Running `../p11-fuzz/x86_64-unknown-linux-gnu/release/runtime -artifact_prefix=/workspace/scratch/b590b31c351d/p11/fuzz/artifacts/runtime/ -runs=50000 -seed=20261119 -max_len=4096 -timeout=10 ../p11-corpus/runtime fuzz/seeds/runtime`
+INFO: Seed: 20261119
+#50000	DONE   cov: 1729 ft: 4714 corp: 536/62Kb lim: 265 exec/s: 16666 rss: 263Mb
+Done 50000 runs in 3 second(s)
+exit 0

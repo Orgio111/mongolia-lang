@@ -1,0 +1,5 @@
+     Running `../p11-fuzz/x86_64-unknown-linux-gnu/release/parser -artifact_prefix=/workspace/scratch/b590b31c351d/p11/fuzz/artifacts/parser/ -runs=50000 -seed=20261119 -max_len=4096 -timeout=10 ../p11-corpus/parser fuzz/seeds/parser`
+INFO: Seed: 20261119
+#50000	DONE   cov: 1451 ft: 4101 corp: 490/62Kb lim: 265 exec/s: 25000 rss: 227Mb
+Done 50000 runs in 2 second(s)
+exit 0

@@ -103,7 +103,7 @@ impl<'ast> Machine<'_, 'ast> {
             return Err(error(span, "E_LIMIT", "call depth exceeded"));
         }
         self.tick(1, span)?;
-        let function = *self
+        let &(_, function) = self
             .signatures
             .get(name)
             .ok_or_else(|| error(span, "E_NAME", "function unavailable"))?;

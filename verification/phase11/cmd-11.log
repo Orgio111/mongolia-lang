@@ -1,0 +1,2 @@
+$ cargo fetch --manifest-path fuzz/Cargo.toml --locked
+exit 0

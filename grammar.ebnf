@@ -1,4 +1,4 @@
-(* Mongolia v0.1 subset. Keywords include canonical Mongolian aliases in SPEC.md.
+(* Mongolia 0.2.0-dev.1 subset. Keywords include canonical Mongolian aliases in SPEC.md.
    Identifier normalization/XID, number ranges and static shape constraints are semantic rules. *)
 unit = { function } ;
 function = FN, identifier, "(", [ parameter, { ",", parameter } ], ")",

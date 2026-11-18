@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0-dev.1 · Phase 11
+
+Resolves functions and immutable locals to deterministic IDs, verifies typed HIR before execution and exposes a canonical dump on CheckedProgram. Both keyword sets support explicit numeric conversions. Adds an experimental axis-equality API for future tensor shape guards. See LANGUAGE_SPECIFICATION_UPDATE.md.
+
 ## 0.1.2 · prepared release candidate
 
 Added reproducible platform ZIPs, verified local-file installers, checksums, production Cargo SBOM, dependency license notices, support templates, distribution CI and paired benchmark regression detection. Compiler and runtime semantics remain at specification 0.1 revision 1. [Release notes](RELEASE_NOTES.md).
