@@ -211,6 +211,12 @@ impl Parser {
             }
             TokenKind::Str(s) => ExprKind::Str(s),
             TokenKind::Word(s) if s == "true" || s == "false" => ExprKind::Bool(s == "true"),
+            TokenKind::Word(s) if s == "i64" || s == "f64" => {
+                self.expect('(')?;
+                let x = self.expr(0)?;
+                self.expect(')')?;
+                ExprKind::Cast(if s == "i64" { Type::I64 } else { Type::F64 }, Box::new(x))
+            }
             TokenKind::Word(s) if !reserved(&s) => {
                 if self.symbol('(') {
                     let mut args = Vec::new();

@@ -15,7 +15,7 @@ product = prefix, { ("*" | "/" | "@"), prefix } ;
 prefix = "-", prefix | primary ;
 primary = integer | float | TRUE | FALSE | string
         | identifier, [ "(", [ expression, { ",", expression } ], ")" ]
-        | "(", expression, ")" | tensor ;
+        | (I64 | F64), "(", expression, ")" | "(", expression, ")" | tensor ;
 tensor = "[", row, { ",", row }, "]" ;
 row = "[", expression, { ",", expression }, "]" ;
 integer = digit, { digit } ;

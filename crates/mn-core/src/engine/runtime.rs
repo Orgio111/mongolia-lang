@@ -183,6 +183,28 @@ impl<'ast> Machine<'_, 'ast> {
                     other => Ok(other.clone()),
                 }
             }
+            ExprKind::Cast(to, x) => {
+                use crate::frontend::Type;
+                match (to, self.eval(x, env, depth + 1)?) {
+                    (Type::I64, v @ Value::Int(_)) | (Type::F64, v @ Value::Float(_)) => Ok(v),
+                    (Type::F64, Value::Int(v)) => Ok(Value::Float(v as f64)),
+                    (Type::I64, Value::Float(v))
+                        if (-9223372036854775808.0..9223372036854775808.0).contains(&v) =>
+                    {
+                        Ok(Value::Int(v as i64))
+                    }
+                    (Type::I64, Value::Float(_)) => Err(error(
+                        &expr.span,
+                        "E_CAST_RANGE",
+                        "value outside i64 conversion range",
+                    )),
+                    _ => Err(error(
+                        &expr.span,
+                        "E_CAST",
+                        "numeric operand required for conversion",
+                    )),
+                }
+            }
             ExprKind::Neg(value) => match self.eval(value, env, depth + 1)? {
                 Value::Int(v) => v
                     .checked_neg()

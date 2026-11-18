@@ -3,6 +3,7 @@ use crate::frontend::{Error, Function, Span};
 use std::collections::HashMap;
 
 mod checker;
+mod hir;
 mod runtime;
 mod tensor;
 pub use checker::{check, validate};
@@ -38,6 +39,7 @@ type Signatures<'a> = HashMap<&'a str, &'a Function>;
 /// ```
 pub struct CheckedProgram<'a> {
     signatures: Signatures<'a>,
+    hir: hir::Module<'a>,
 }
 
 #[cfg(test)]
@@ -196,5 +198,12 @@ mod tests {
     #[test]
     fn allocation_size_overflow_is_rejected() {
         assert!(area(usize::MAX, 2, &Span { start: 0, end: 0 }).is_err());
+    }
+}
+
+impl CheckedProgram<'_> {
+    /// Backend-independent text for semantic conformance tests.
+    pub fn hir_dump(&self) -> String {
+        self.hir.dump()
     }
 }

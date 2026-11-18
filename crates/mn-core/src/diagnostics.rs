@@ -7,6 +7,13 @@ pub fn render_detail(error: &Error, lang: &str) -> String {
     }
     let detail = error.detail.as_str();
     let exact = match detail {
+        "value outside i64 conversion range" => {
+            Some("Утга бүхэл64 төрөлд хөрвүүлэх хязгаараас хэтэрсэн")
+        }
+        "invalid typed HIR" => Some("Төрөлжсөн HIR-ийн бүтэц буруу байна"),
+        "numeric operand required for conversion" => {
+            Some("Хөрвүүлэхдээ бүхэл64 эсвэл бодит64 төрлийн утга хэрэглэнэ үү")
+        }
         "expression exceeds 256 nodes" => {
             Some("Нэг өгүүлбэр дэх илэрхийллийн тоо 256-аас хэтэрлээ")
         }

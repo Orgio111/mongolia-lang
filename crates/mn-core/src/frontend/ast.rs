@@ -42,6 +42,7 @@ pub enum ExprKind {
     Var(String),
     Call(String, Vec<Expr>),
     Binary(char, Box<Expr>, Box<Expr>),
+    Cast(Type, Box<Expr>),
     Neg(Box<Expr>),
     Tensor(Vec<Vec<Expr>>),
 }

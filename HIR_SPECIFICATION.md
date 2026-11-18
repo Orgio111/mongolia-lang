@@ -1,0 +1,7 @@
+# HIR revision 1
+
+One source module owns a declaration-order function table and an entry ID. Functions hold original byte spans, ordered parameter types, result type and statement records. Parameters take the first frame slots; successful bindings take consecutive slots. Calls and reads use integer IDs independent of keyword spelling and variable names.
+
+Inside each statement, expressions form a typed postorder sequence. Each operation carries its original span, explicit result type and literal payload or resolved operand metadata. Literals and reads have no children, a unary operation has one, a binary operation has two, calls consume signature arity, and tensor constructors consume row-major cell count. These structural arities reconstruct the expression tree. Statement kinds distinguish let, print, return and discard. Identity of a slot is relative to its containing function. IDs survive spelling changes within a source revision; reordering declarations can renumber them.
+
+A second pass reconstructs operand types, validates frame initialization, call signatures, literal domains, static shapes and returns. Each nonempty statement expression has exactly one result. The canonical text dump includes typed operations in order and excludes names and source offsets. The AST interpreter remains the execution oracle. No opcode numbers, bytecode format or target-specific layout are assigned.
