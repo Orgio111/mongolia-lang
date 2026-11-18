@@ -1,0 +1,15 @@
+   Compiling tinyvec v1.13.3
+   Compiling unicode-script v0.5.8
+   Compiling unicode-ident v1.0.22
+   Compiling unicode-normalization v0.1.24
+   Compiling mn-core v0.1.2 (/tmp/tmpwitspksb/one/crates/mn-core)
+   Compiling mn-cli v0.1.2 (/tmp/tmpwitspksb/one/crates/mn-cli)
+    Finished `release` profile [optimized] target(s) in 1.87s
+   Compiling tinyvec v1.13.3
+   Compiling unicode-ident v1.0.22
+   Compiling unicode-script v0.5.8
+   Compiling unicode-normalization v0.1.24
+   Compiling mn-core v0.1.2 (/tmp/tmpwitspksb/independent-two/crates/mn-core)
+   Compiling mn-cli v0.1.2 (/tmp/tmpwitspksb/independent-two/crates/mn-cli)
+    Finished `release` profile [optimized] target(s) in 1.80s
+68e56ac2054a13b98723144f6feda569db89890edee22864fa8f726a474aebe7  mn-0.1.2-aarch64-unknown-linux-musl.zip

@@ -1,0 +1,15 @@
+   Compiling tinyvec v1.13.3
+   Compiling unicode-ident v1.0.22
+   Compiling unicode-script v0.5.8
+   Compiling unicode-normalization v0.1.24
+   Compiling mn-core v0.1.2 (/tmp/tmpc0ipk4tw/one/crates/mn-core)
+   Compiling mn-cli v0.1.2 (/tmp/tmpc0ipk4tw/one/crates/mn-cli)
+    Finished `release` profile [optimized] target(s) in 1.89s
+   Compiling tinyvec v1.13.3
+   Compiling unicode-ident v1.0.22
+   Compiling unicode-script v0.5.8
+   Compiling unicode-normalization v0.1.24
+   Compiling mn-core v0.1.2 (/tmp/tmpc0ipk4tw/independent-two/crates/mn-core)
+   Compiling mn-cli v0.1.2 (/tmp/tmpc0ipk4tw/independent-two/crates/mn-cli)
+    Finished `release` profile [optimized] target(s) in 1.47s
+7ad8d9470305bde6603352de38963e5a0c094ec9ed4293b7b43da04f050cf003  mn-0.1.2-x86_64-unknown-linux-musl.zip

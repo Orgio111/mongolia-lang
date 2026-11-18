@@ -1,0 +1,2 @@
+// Minimum version: v0.1.0 foundation subset.
+функц main() { хэвлэх("Сайн байна уу, Монгол!"); }

@@ -1,0 +1,7 @@
+// NOT EXECUTABLE in v0.1. v0.3 proposal; broadcasting not implemented.
+// Proposal syntax and APIs subject to RFC; version is a target, not a guarantee.
+fn main() {
+    let x: Tensor<f64, [2, 2]> = [[1.0, 2.0], [3.0, 4.0]];
+    let bias: Tensor<f64, [1, 2]> = [[10.0, 20.0]];
+    print(x + bias); // [[11.0, 22.0], [13.0, 24.0]]
+}

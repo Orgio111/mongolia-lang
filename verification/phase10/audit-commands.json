@@ -1,0 +1,18 @@
+[
+  [
+    [
+      "cargo",
+      "audit"
+    ],
+    0
+  ],
+  [
+    [
+      "cargo",
+      "audit",
+      "--file",
+      "fuzz/Cargo.lock"
+    ],
+    0
+  ]
+]

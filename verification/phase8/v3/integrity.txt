@@ -1,0 +1,4 @@
+Parent Phase 8 ZIP SHA-256 ccf03b933af9691b7435f11e69e580dac7ae0f77b6a5b462717a9681d11bd528
+All parent checksums verified. All parent paths retained. Compiler sources, workspace manifests, lockfiles, CI, fixtures and scripts are byte-identical.
+50 unique ordered area IDs. 620 unique area/item pairs. All classifications, evidence paths and engineering fields populated. Local documentation links and all 50 contract anchors checked.
+Fresh locked release build and debug verification script succeeded, including 54 tests, fmt, Clippy and 11 example checks. Release tests passed 54 cases. One timing-only probe intentionally ignored in each standard suite. No fresh timing or hardware claim in this addendum.

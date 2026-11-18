@@ -1,0 +1,52 @@
+{
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "shape": [
+    240,
+    1,
+    240
+  ],
+  "observations": [
+    {
+      "limit_kib": 3500,
+      "exit": -6,
+      "stdout": "",
+      "first_error": [
+        "memory allocation of 1536 bytes failed"
+      ]
+    },
+    {
+      "limit_kib": 3700,
+      "exit": 1,
+      "stdout": "",
+      "first_error": [
+        "Error[E_ALLOCATION] 1:2439: tensor allocation failed"
+      ]
+    },
+    {
+      "limit_kib": 3900,
+      "exit": 1,
+      "stdout": "",
+      "first_error": [
+        "Error[E_ALLOCATION] 1:2439: tensor allocation failed"
+      ]
+    },
+    {
+      "limit_kib": 4100,
+      "exit": 0,
+      "stdout": "42\n",
+      "first_error": []
+    },
+    {
+      "limit_kib": 4600,
+      "exit": 0,
+      "stdout": "42\n",
+      "first_error": []
+    },
+    {
+      "limit_kib": 8192,
+      "exit": 0,
+      "stdout": "42\n",
+      "first_error": []
+    }
+  ]
+}

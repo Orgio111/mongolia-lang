@@ -1,0 +1,44 @@
+(* Mongolia v0.1 subset. Keywords include canonical Mongolian aliases in SPEC.md.
+   Identifier normalization/XID, number ranges and static shape constraints are semantic rules. *)
+unit = { function } ;
+function = FN, identifier, "(", [ parameter, { ",", parameter } ], ")",
+           [ "->", type ], "{", { statement }, "}" ;
+parameter = identifier, ":", type ;
+type = I64 | F64 | BOOL | STRING | "(", ")"
+     | TENSOR, "<", F64, ",", "[", integer, ",", integer, "]", ">" ;
+statement = LET, identifier, [ ":", type ], "=", expression, ";"
+          | RETURN, [ expression ], ";"
+          | PRINT, "(", expression, ")", ";"
+          | expression, ";" ;
+expression = product, { ("+" | "-"), product } ;
+product = prefix, { ("*" | "/" | "@"), prefix } ;
+prefix = "-", prefix | primary ;
+primary = integer | float | TRUE | FALSE | string
+        | identifier, [ "(", [ expression, { ",", expression } ], ")" ]
+        | "(", expression, ")" | tensor ;
+tensor = "[", row, { ",", row }, "]" ;
+row = "[", expression, { ",", expression }, "]" ;
+integer = digit, { digit } ;
+float = digit, { digit }, ".", digit, { digit } ;
+digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+identifier = xid_start_or_underscore, { xid_continue_or_underscore } ;
+string = '"', { string_character | escape }, '"' ;
+escape = "\", ("\" | '"' | "n" | "r" | "t") ;
+(* Quoted strings denote literal characters. Backslash is ordinary inside EBNF quotes.
+   The parser consumes the entire token stream. Trivia is discarded before parsing.
+   identifier excludes all reserved spellings after NFC and alias canonicalization. *)
+FN = "fn" | "функц" ;
+LET = "let" | "хувьсагч" ;
+RETURN = "return" | "буцаах" ;
+PRINT = "print" | "хэвлэх" ;
+TRUE = "true" | "үнэн" ;
+FALSE = "false" | "худал" ;
+I64 = "i64" | "бүхэл64" ;
+F64 = "f64" | "бодит64" ;
+BOOL = "bool" | "логик" ;
+STRING = "string" | "мөр" ;
+TENSOR = "Tensor" | "Тензор" ;
+xid_start_or_underscore = "_" | ? Unicode XID_Start ? ;
+xid_continue_or_underscore = "_" | ? Unicode XID_Continue ? ;
+string_character = ? any Unicode scalar except double quote, backslash, LF and CR ? ;
+trivia = ? whitespace, // line comment, or recursively nested /* block comment */ as defined in SPEC.md ? ;

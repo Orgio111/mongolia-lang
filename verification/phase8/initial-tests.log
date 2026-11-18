@@ -1,0 +1,106 @@
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded tinyvec v1.13.3
+  Downloaded unicode-ident v1.0.22
+  Downloaded unicode-normalization v0.1.24
+   Compiling tinyvec v1.13.3
+   Compiling unicode-ident v1.0.22
+   Compiling unicode-normalization v0.1.24
+   Compiling mn-core v0.1.0 (/workspace/scratch/b590b31c351d/phase8/mongolia-lang/crates/mn-core)
+   Compiling mn-cli v0.1.0 (/workspace/scratch/b590b31c351d/phase8/mongolia-lang/crates/mn-cli)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 13.44s
+     Running unittests src/main.rs (../../phase8-target-clean/debug/build/mn-cli/8e690e9f353f79d6/out/mn-8e690e9f353f79d6)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/cli.rs (../../phase8-target-clean/debug/build/mn-cli/1a01582606a9a548/out/cli-1a01582606a9a548)
+
+running 12 tests
+test init_refuses_dangling_source_without_creating_manifest ... ok
+test init_rejects_unknown_options_without_creating_a_directory ... ok
+test invalid_utf8 ... ok
+test init_preserves_existing_files ... ok
+test input_errors_report_the_byte_offset_and_limit_in_mongolian ... ok
+test unsupported_command ... ok
+test utf8_program_loads_from_a_non_utf8_path ... ok
+test validation_is_not_execution ... ok
+test diagnostic_excerpt_keeps_control_characters_inert ... ok
+test acceptance_a_b_c_e ... ok
+test shape_error_prevents_output ... ok
+test negative_programs ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/lib.rs (../../phase8-target-clean/debug/build/mn-core/7688484b6d1be583/out/mn_core-7688484b6d1be583)
+
+running 26 tests
+test diagnostics::tests::shape_catalog_keeps_evidence ... ok
+test engine::tests::allocation_size_overflow_is_rejected ... ok
+test engine::tests::arithmetic ... ok
+test engine::tests::bilingual ... ok
+test engine::tests::checked_integers ... ok
+test engine::tests::float_division_is_ieee ... ok
+test engine::tests::errors ... ok
+test engine::tests::invalid_shapes ... ok
+test engine::tests::functions ... ok
+test engine::tests::mixed ... ok
+test engine::tests::matmul ... ok
+test engine::tests::recursion_is_bounded ... ok
+test frontend::parser::bench_tests::stage_measurements ... ignored, measurement, run via scripts/phase8_benchmark.py
+test engine::tests::validate_unused_functions ... ok
+test frontend::tests::bilingual ... ok
+test frontend::tests::mixed_identifier_rejected ... ok
+test frontend::tests::confusable_collision ... ok
+test engine::tests::tensor_identity_and_shape_properties ... ok
+test engine::tests::differential_small_matrices ... ok
+test frontend::tests::malformed ... ok
+test frontend::tests::precedence ... ok
+test frontend::tests::unicode_spans ... ok
+test frontend::tests::depth_limit ... ok
+test frontend::tests::nfc ... ok
+test frontend::tests::type_and_call ... ok
+test engine::tests::integer_arithmetic_matches_checked_reference ... ok
+
+test result: ok. 25 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/checked_program.rs (../../phase8-target-clean/debug/build/mn-core/cf2decbd2314af1c/out/checked_program-cf2decbd2314af1c)
+
+running 3 tests
+test checker_rejects_invalid_annotation_in_an_externally_assembled_ast ... ok
+test checked_handle_reuses_code_and_resets_execution_state ... ok
+test tensor_print_budget_includes_delimiters_and_final_newline ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+     Running tests/phase2.rs (../../phase8-target-clean/debug/build/mn-core/bb4089eb57e6d00f/out/phase2-bb4089eb57e6d00f)
+
+running 8 tests
+test large_tensor_annotation_fails_in_semantic_validation ... ok
+test forward_calls_and_argument_effect_order ... ok
+test minimum_integer_and_left_associativity ... ok
+test negation_and_subtraction_have_distinct_domains ... ok
+test lexical_rules_and_normalized_scope ... ok
+test tensor_dimensions_and_result_capacity ... ok
+test exact_source_and_token_caps ... ok
+test exact_work_and_output_caps ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.24s
+
+     Running tests/stress.rs (../../phase8-target-clean/debug/build/mn-core/7c50798ab3e2c739/out/stress-7c50798ab3e2c739)
+
+running 3 tests
+test bilingual_diagnostic_catalog_matches_golden_files ... ok
+test arbitrary_unicode_does_not_panic_and_spans_are_boundaries ... ok
+test mutate_valid_programs_without_panics_or_invalid_spans ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+   Doc-tests mn_core
+
+running 1 test
+test crates/mn-core/src/engine.rs - engine::CheckedProgram (line 32) - compile fail ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+

@@ -1,0 +1,7 @@
+// NOT EXECUTABLE in v0.1. v0.3 proposal; broadcasting not implemented.
+// Proposal syntax and APIs subject to RFC; version is a target, not a guarantee.
+функц main() {
+    хувьсагч x: Тензор<бодит64, [2, 2]> = [[1.0, 2.0], [3.0, 4.0]];
+    хувьсагч хазайлт: Тензор<бодит64, [1, 2]> = [[10.0, 20.0]];
+    хэвлэх(x + хазайлт); // [[11.0, 22.0], [13.0, 24.0]]
+}

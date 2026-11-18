@@ -1,0 +1,5 @@
+E_SHAPE: [2, 3] @ [2, 2]: inner dimensions 3 and 2 are incompatible
+E_NAME: undefined identifier жин
+E_TYPE: expected I64, found Bool
+E_ARGUMENTS: add expects 2 arguments, found 1
+E_DIV_ZERO: integer division by zero

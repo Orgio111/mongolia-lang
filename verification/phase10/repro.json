@@ -1,0 +1,12 @@
+{
+  "rust": "rustc 1.100.0 (0ef1bc386 2026-11-09)\nbinary: rustc\ncommit-hash: 0ef1bc386059596dada8fb65b50425aab2ea637a\ncommit-date: 2026-11-09\nhost: x86_64-unknown-linux-gnu\nrelease: 1.100.0\nLLVM version: 23.1.5\n",
+  "first": {
+    "bytes": 851464,
+    "sha256": "427e43159bc03a5c4995c257f2e518124e4f975e664ea83a607ebface2ba248e"
+  },
+  "second": {
+    "bytes": 851464,
+    "sha256": "427e43159bc03a5c4995c257f2e518124e4f975e664ea83a607ebface2ba248e"
+  },
+  "equal": true
+}

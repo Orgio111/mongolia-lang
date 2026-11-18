@@ -1,0 +1,2 @@
+gpg --batch --pinentry-mode loopback --passphrase  --quick-generate-key Phase 10 Test Key (Disposable) ed25519 sign 1d exit 2
+Local gpg-agent could not create its socket (operation not permitted). Selected OpenSSH detached signing for this kit.

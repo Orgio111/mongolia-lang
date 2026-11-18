@@ -1,0 +1,44 @@
+// NOT EXECUTABLE in v0.1. v0.3 design showcase; requires modules, structs, loops, borrowing, broadcasting, AD and optim APIs not implemented.
+// Proposal syntax and APIs subject to RFC; version is a target, not a guarantee.
+import std::tensor;
+import std::optim;
+
+struct Parameters {
+    w1: Tensor<f64, [2, 3]>,
+    b1: Tensor<f64, [1, 3]>,
+    w2: Tensor<f64, [3, 1]>,
+    b2: Tensor<f64, [1, 1]>,
+}
+
+fn forward(p: &Parameters, x: &Tensor<f64, [4, 2]>) -> Tensor<f64, [4, 1]> {
+    let hidden = tensor::tanh(x @ &p.w1 + &p.b1);
+    return hidden @ &p.w2 + &p.b2;
+}
+
+fn loss(p: &Parameters, x: &Tensor<f64, [4, 2]>, target: &Tensor<f64, [4, 1]>) -> f64 {
+    let residual = forward(p, x) - target;
+    return tensor::mean(residual * residual);
+}
+
+fn main() {
+    // Four fixed input/output pairs; no PRNG or external dataset.
+    let x = [[0.0, 0.0], [0.0, 1.0], [1.0, 0.0], [1.0, 1.0]];
+    let target = [[0.0], [1.0], [1.0], [2.0]];
+    let mut p = Parameters {
+        w1: [[0.1, -0.2, 0.3], [0.2, 0.1, -0.1]],
+        b1: [[0.0, 0.0, 0.0]],
+        w2: [[0.2], [-0.1], [0.3]],
+        b2: [[0.0]],
+    };
+    let mut optimizer = optim::SGD::new(0.05);
+    for iteration in 0..200 {
+        let value = loss(&p, &x, &target);
+        // argnums=0 returns a Parameters-shaped gradient tree.
+        let gradient = grad(loss, argnums=0)(&p, &x, &target);
+        optimizer.step(&mut p, &gradient);
+        print(iteration);
+        print(value);
+    }
+    print(loss(&p, &x, &target));
+    print(forward(&p, &x));
+}

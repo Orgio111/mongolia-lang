@@ -1,0 +1,171 @@
+   Compiling tinyvec v1.13.3
+   Compiling unicode-ident v1.0.22
+   Compiling unicode-normalization v0.1.24
+   Compiling mn-core v0.1.0 (/workspace/scratch/b590b31c351d/phase9/mongolia-lang/crates/mn-core)
+   Compiling mn-cli v0.1.0 (/workspace/scratch/b590b31c351d/phase9/mongolia-lang/crates/mn-cli)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.71s
+     Running unittests src/main.rs (../../p9-target/debug/build/mn-cli/8e690e9f353f79d6/out/mn-8e690e9f353f79d6)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/cli.rs (../../p9-target/debug/build/mn-cli/1a01582606a9a548/out/cli-1a01582606a9a548)
+
+running 14 tests
+test init_refuses_dangling_source_without_creating_manifest ... ok
+test invalid_utf8 ... ok
+test diagnostic_unicode_line_separator_is_inert ... FAILED
+test diagnostic_excerpt_keeps_control_characters_inert ... ok
+test init_rejects_unknown_options_without_creating_a_directory ... ok
+test init_preserves_existing_files ... ok
+test long_unicode_diagnostics_keep_real_column_and_bound_the_excerpt ... FAILED
+test unsupported_command ... ok
+test utf8_program_loads_from_a_non_utf8_path ... ok
+test input_errors_report_the_byte_offset_and_limit_in_mongolian ... ok
+test acceptance_a_b_c_e ... ok
+test validation_is_not_execution ... ok
+test shape_error_prevents_output ... ok
+test negative_programs ... ok
+
+failures:
+
+---- diagnostic_unicode_line_separator_is_inert stdout ----
+
+thread 'diagnostic_unicode_line_separator_is_inert' (814) panicked at crates/mn-cli/tests/cli.rs:213:5:
+assertion failed: !msg.contains(['\u{2028}', '\u{2029}'])
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- long_unicode_diagnostics_keep_real_column_and_bound_the_excerpt stdout ----
+
+thread 'long_unicode_diagnostics_keep_real_column_and_bound_the_excerpt' (828) panicked at crates/mn-cli/tests/cli.rs:205:5:
+assertion failed: msg.contains("missing") && msg.len() < 1500
+
+
+failures:
+    diagnostic_unicode_line_separator_is_inert
+    long_unicode_diagnostics_keep_real_column_and_bound_the_excerpt
+
+test result: FAILED. 12 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `-p mn-cli --test cli`
+     Running unittests src/lib.rs (../../p9-target/debug/build/mn-core/7688484b6d1be583/out/mn_core-7688484b6d1be583)
+
+running 26 tests
+test diagnostics::tests::shape_catalog_keeps_evidence ... ok
+test engine::tests::allocation_size_overflow_is_rejected ... ok
+test engine::tests::arithmetic ... ok
+test engine::tests::bilingual ... ok
+test engine::tests::checked_integers ... ok
+test engine::tests::errors ... ok
+test engine::tests::float_division_is_ieee ... ok
+test engine::tests::invalid_shapes ... ok
+test frontend::parser::bench_tests::stage_measurements ... ignored, measurement, run via scripts/phase8_benchmark.py
+test engine::tests::validate_unused_functions ... ok
+test engine::tests::recursion_is_bounded ... ok
+test frontend::tests::bilingual ... ok
+test frontend::tests::confusable_collision ... ok
+test engine::tests::tensor_identity_and_shape_properties ... ok
+test frontend::tests::malformed ... ok
+test frontend::tests::depth_limit ... ok
+test engine::tests::mixed ... ok
+test frontend::tests::mixed_identifier_rejected ... ok
+test engine::tests::functions ... ok
+test frontend::tests::precedence ... ok
+test engine::tests::differential_small_matrices ... ok
+test engine::tests::matmul ... ok
+test frontend::tests::nfc ... ok
+test frontend::tests::type_and_call ... ok
+test frontend::tests::unicode_spans ... ok
+test engine::tests::integer_arithmetic_matches_checked_reference ... ok
+
+test result: ok. 25 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/checked_program.rs (../../p9-target/debug/build/mn-core/cf2decbd2314af1c/out/checked_program-cf2decbd2314af1c)
+
+running 3 tests
+test checked_handle_reuses_code_and_resets_execution_state ... ok
+test checker_rejects_invalid_annotation_in_an_externally_assembled_ast ... ok
+test tensor_print_budget_includes_delimiters_and_final_newline ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests/phase2.rs (../../p9-target/debug/build/mn-core/bb4089eb57e6d00f/out/phase2-bb4089eb57e6d00f)
+
+running 10 tests
+test all_proposed_keyword_aliases_share_canonical_tokens ... ok
+test large_tensor_annotation_fails_in_semantic_validation ... ok
+test lexical_rules_and_normalized_scope ... ok
+test forward_calls_and_argument_effect_order ... ok
+test negation_and_subtraction_have_distinct_domains ... ok
+test strings_returned_from_a_call_keep_their_values ... ok
+test minimum_integer_and_left_associativity ... ok
+test tensor_dimensions_and_result_capacity ... ok
+test exact_source_and_token_caps ... ok
+test exact_work_and_output_caps ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+     Running tests/stabilization.rs (../../p9-target/debug/build/mn-core/aa2f66f619bc834e/out/stabilization-aa2f66f619bc834e)
+
+running 5 tests
+test padded_minimum_has_the_same_integer_value ... FAILED
+test return_mismatch_labels_the_returned_expression ... FAILED
+test externally_supplied_nonfinite_literals_are_rejected ... FAILED
+test script_checks_use_normalized_unicode_scripts ... FAILED
+test rectangular_matmul_preserves_contraction_order ... ok
+
+failures:
+
+---- padded_minimum_has_the_same_integer_value stdout ----
+
+thread 'padded_minimum_has_the_same_integer_value' (899) panicked at crates/mn-core/tests/stabilization.rs:17:75:
+called `Result::unwrap()` on an `Err` value: Error { span: Span { start: 17, end: 39 }, code: "E_NUMBER", detail: "integer literal out of range" }
+
+---- return_mismatch_labels_the_returned_expression stdout ----
+
+thread 'return_mismatch_labels_the_returned_expression' (901) panicked at crates/mn-core/tests/stabilization.rs:29:5:
+assertion `left == right` failed
+  left: "функц f()->i64{буцаах (үнэн);}"
+ right: "(үнэн)"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- externally_supplied_nonfinite_literals_are_rejected stdout ----
+
+thread 'externally_supplied_nonfinite_literals_are_rejected' (898) panicked at crates/mn-core/tests/stabilization.rs:38:36:
+called `Result::unwrap_err()` on an `Ok` value: "inf\n"
+
+---- script_checks_use_normalized_unicode_scripts stdout ----
+
+thread 'script_checks_use_normalized_unicode_scripts' (902) panicked at crates/mn-core/tests/stabilization.rs:7:42:
+called `Result::unwrap_err()` on an `Ok` value: [Token { kind: Word("fn"), span: Span { start: 0, end: 2 } }, Token { kind: Word("main"), span: Span { start: 3, end: 7 } }, Token { kind: Symbol('('), span: Span { start: 7, end: 8 } }, Token { kind: Symbol(')'), span: Span { start: 8, end: 9 } }, Token { kind: Symbol('{'), span: Span { start: 10, end: 11 } }, Token { kind: Word("let"), span: Span { start: 12, end: 15 } }, Token { kind: Word("éБ"), span: Span { start: 16, end: 20 } }, Token { kind: Symbol('='), span: Span { start: 21, end: 22 } }, Token { kind: Number("1"), span: Span { start: 23, end: 24 } }, Token { kind: Symbol(';'), span: Span { start: 24, end: 25 } }, Token { kind: Symbol('}'), span: Span { start: 26, end: 27 } }, Token { kind: Eof, span: Span { start: 27, end: 27 } }]
+
+
+failures:
+    externally_supplied_nonfinite_literals_are_rejected
+    padded_minimum_has_the_same_integer_value
+    return_mismatch_labels_the_returned_expression
+    script_checks_use_normalized_unicode_scripts
+
+test result: FAILED. 1 passed; 4 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `-p mn-core --test stabilization`
+     Running tests/stress.rs (../../p9-target/debug/build/mn-core/7c50798ab3e2c739/out/stress-7c50798ab3e2c739)
+
+running 3 tests
+test bilingual_diagnostic_catalog_matches_golden_files ... ok
+test arbitrary_unicode_does_not_panic_and_spans_are_boundaries ... ok
+test mutate_valid_programs_without_panics_or_invalid_spans ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+   Doc-tests mn_core
+
+running 1 test
+test crates/mn-core/src/engine.rs - engine::CheckedProgram (line 32) - compile fail ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+error: 2 targets failed:
+    `-p mn-cli --test cli`
+    `-p mn-core --test stabilization`

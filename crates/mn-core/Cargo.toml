@@ -1,0 +1,9 @@
+[package]
+name = "mn-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+[dependencies]
+unicode-ident.workspace = true
+unicode-normalization.workspace = true
+unicode-script.workspace = true

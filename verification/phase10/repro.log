@@ -1,0 +1,14 @@
+   Compiling tinyvec v1.13.3
+   Compiling unicode-ident v1.0.22
+   Compiling unicode-script v0.5.8
+   Compiling unicode-normalization v0.1.24
+   Compiling mn-core v0.1.2 (/tmp/tmpl9w3sptg/tree-one/crates/mn-core)
+   Compiling mn-cli v0.1.2 (/tmp/tmpl9w3sptg/tree-one/crates/mn-cli)
+    Finished `release` profile [optimized] target(s) in 2.14s
+   Compiling tinyvec v1.13.3
+   Compiling unicode-ident v1.0.22
+   Compiling unicode-script v0.5.8
+   Compiling unicode-normalization v0.1.24
+   Compiling mn-core v0.1.2 (/tmp/tmpl9w3sptg/longer-source-path-two/crates/mn-core)
+   Compiling mn-cli v0.1.2 (/tmp/tmpl9w3sptg/longer-source-path-two/crates/mn-cli)
+    Finished `release` profile [optimized] target(s) in 2.14s

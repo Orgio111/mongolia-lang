@@ -1,0 +1,33 @@
+(* NONNORMATIVE DESIGN SKETCH. NOT PARSED BY v0.1. Unresolved productions
+   deliberately reference v0.1 lexical/expression rules; this is not a complete
+   future parser specification and cannot be used to claim future support. *)
+module = { import | function | struct | enum | foreign } ;
+import = "import", path, ";" ;
+path = identifier, { "::", identifier } ;
+generics = "<", generic, { ",", generic }, ">" ;
+generic = identifier, [ ":", path ] | "const", identifier, ":", type ;
+function = [ "pub" ], "fn", identifier, [ generics ], "(", [ parameters ], ")",
+           [ "->", type ], block ;
+struct = "struct", identifier, [ generics ], "{", [ fields ], "}" ;
+enum = "enum", identifier, [ generics ], "{", variant, { ",", variant }, "}" ;
+variant = identifier, [ "(", type, { ",", type }, ")" ] ;
+fields = identifier, ":", type, { ",", identifier, ":", type } ;
+parameters = identifier, ":", type, { ",", identifier, ":", type } ;
+block = "{", { statement }, [ expression ], "}" ;
+statement = binding | expression, ";" | "return", [ expression ], ";"
+          | "while", expression, block | "for", pattern, "in", expression, block ;
+binding = "let", [ "mut" ], pattern, [ ":", type ], "=", expression, ";" ;
+branch = "if", expression, block, [ "else", (block | branch) ] ;
+match = "match", expression, "{", arm, { ",", arm }, "}" ;
+arm = pattern, "=>", expression ;
+pattern = "_" | identifier | literal | path, "(", pattern, { ",", pattern }, ")" ;
+reference = "&", [ "mut" ], expression ;
+propagate = expression, "?" ;
+differentiate = "grad", "(", expression, ")", "(", arguments, ")" ;
+tensor_type = "Tensor", "<", type, ",", "[", dimension, { ",", dimension }, "]", ">" ;
+dimension = integer | identifier | "?" ;
+foreign = "extern", '"C"', "{", { foreign_function }, "}" ;
+foreign_function = "fn", identifier, "(", [ parameters ], ")", [ "->", type ], ";" ;
+(* Future expression precedence, lifetime/generic ambiguity, pattern exhaustiveness,
+   trailing commas, error propagation and keyword vocabulary require accepted RFCs.
+   In particular this sketch does not permit arbitrary side effects inside grad. *)

@@ -1,0 +1,4 @@
+// NOT EXECUTABLE in v0.1. v0.3 proposal; compiler AD not implemented.
+// Proposal syntax and APIs subject to RFC; version is a target, not a guarantee.
+функц квадрат(x: бодит64) -> бодит64 { буцаах x * x; }
+функц main() { хэвлэх(уламжлал(квадрат)(3.0)); } // 6.0

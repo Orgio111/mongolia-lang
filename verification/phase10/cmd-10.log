@@ -1,0 +1,14 @@
+$ cargo fetch --manifest-path fuzz/Cargo.toml --locked
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded getrandom v0.4.3
+  Downloaded r-efi v6.0.0
+  Downloaded cfg-if v1.0.5
+  Downloaded shlex v2.0.1
+  Downloaded find-msvc-tools v0.1.15
+  Downloaded libfuzzer-sys v0.4.13
+  Downloaded jobserver v0.1.35
+  Downloaded cc v1.11.2
+  Downloaded arbitrary v1.5.0
+  Downloaded libc v0.2.191
+exit 0

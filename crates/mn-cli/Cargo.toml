@@ -1,0 +1,10 @@
+[package]
+name = "mn-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+[[bin]]
+name = "mn"
+path = "src/main.rs"
+[dependencies]
+mn-core = { path = "../mn-core" }

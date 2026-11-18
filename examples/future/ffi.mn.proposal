@@ -1,0 +1,9 @@
+// NOT EXECUTABLE in v0.1. future FFI proposal, earliest v0.4; no ABI implementation.
+// Proposal syntax and APIs subject to RFC; version is a target, not a guarantee.
+extern "C" {
+    fn mn_square(x: f64) -> f64;
+}
+fn main() {
+    let y = unsafe { mn_square(3.0) };
+    print(y); // 9.0, linked with square.c shown in SHOWCASES.md
+}

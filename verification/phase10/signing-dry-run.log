@@ -1,0 +1,6 @@
+ssh-keygen -q -t ed25519 -N  -f <temp>/key exit 0
+sh scripts/release/sign.sh <temp>/key <temp>/fixture.SHA256SUMS exit 0
+ssh-keygen -Y verify -f <temp>/allowed -I fixture -n mongolia-release -s <temp>/fixture.SHA256SUMS.sig exit 0
+ssh-keygen -Y verify -f <temp>/allowed -I fixture -n mongolia-release -s <temp>/fixture.SHA256SUMS.sig exit 255
+sh scripts/release/sign.sh <temp>/key <temp>/fixture.SHA256SUMS exit 1
+Temporary test key and fixture discarded. Release artifacts have no signature.

@@ -1,0 +1,8 @@
+$ cargo tree --locked --workspace
+mn-cli v0.1.0 (/workspace/scratch/b590b31c351d/phase8/mongolia-lang/crates/mn-cli)
+└── mn-core v0.1.0 (/workspace/scratch/b590b31c351d/phase8/mongolia-lang/crates/mn-core)
+    ├── unicode-ident v1.0.22
+    └── unicode-normalization v0.1.24
+        └── tinyvec v1.13.3
+
+mn-core v0.1.0 (/workspace/scratch/b590b31c351d/phase8/mongolia-lang/crates/mn-core) (*)

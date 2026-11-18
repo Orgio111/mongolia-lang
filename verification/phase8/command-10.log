@@ -1,0 +1,2 @@
+$ python3 scripts/check_matmul.py ../../phase8-target-clean/debug/mn ../../phase8-target-clean/release/mn
+seed 20261118: 64 compatible and 32 incompatible pairs, 192 CLI runs passed

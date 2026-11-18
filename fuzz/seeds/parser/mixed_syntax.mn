@@ -1,0 +1,2 @@
+// Minimum version: v0.1.0 foundation subset.
+функц main() { let a = 10; хувьсагч b = 20; print(a + b); }

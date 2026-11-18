@@ -1,0 +1,149 @@
+{
+  "database": "https://github.com/RustSec/advisory-db",
+  "revision": "233155b4025b854c68a4b199c0e32d7fd53291a2",
+  "packages": [
+    {
+      "name": "arbitrary",
+      "version": "1.5.0",
+      "locks": [
+        "fuzz/Cargo.lock"
+      ],
+      "checksum": "3bc62ac97cc33321f50863d514c3bc38a453947a8f9e781137e47c7401020aed",
+      "records": [],
+      "cached_checksum_verified": true
+    },
+    {
+      "name": "cc",
+      "version": "1.11.2",
+      "locks": [
+        "fuzz/Cargo.lock"
+      ],
+      "checksum": "33ef9e3e8154a45c7a95cff4c1299702106ad94062d7bb85fdc5d3a5afd91d45",
+      "records": [],
+      "cached_checksum_verified": true
+    },
+    {
+      "name": "cfg-if",
+      "version": "1.0.5",
+      "locks": [
+        "fuzz/Cargo.lock"
+      ],
+      "checksum": "4e7648175b45a9a48536d676f68d918270699102aa8dab5496df06904c914600",
+      "records": [],
+      "cached_checksum_verified": true
+    },
+    {
+      "name": "find-msvc-tools",
+      "version": "0.1.15",
+      "locks": [
+        "fuzz/Cargo.lock"
+      ],
+      "checksum": "1c66915cc5391097de7a2b0b972e8505aa33c0df401fd3a6811dbdb32881ba48",
+      "records": [],
+      "cached_checksum_verified": true
+    },
+    {
+      "name": "getrandom",
+      "version": "0.4.3",
+      "locks": [
+        "fuzz/Cargo.lock"
+      ],
+      "checksum": "300e883d756b2e4ec94e02791f39b04b522276138852cfc41d9fb7e904106099",
+      "records": [],
+      "cached_checksum_verified": true
+    },
+    {
+      "name": "jobserver",
+      "version": "0.1.35",
+      "locks": [
+        "fuzz/Cargo.lock"
+      ],
+      "checksum": "1c00acbd29eabad4a2392fa0e921c874934dbbf4194312ad20f04a0ed67a3cb3",
+      "records": [],
+      "cached_checksum_verified": true
+    },
+    {
+      "name": "libc",
+      "version": "0.2.191",
+      "locks": [
+        "fuzz/Cargo.lock"
+      ],
+      "checksum": "65cd87c9a6d60536580b316ad985726104730a5151c99845f2490428ef91240a",
+      "records": [],
+      "cached_checksum_verified": true
+    },
+    {
+      "name": "libfuzzer-sys",
+      "version": "0.4.13",
+      "locks": [
+        "fuzz/Cargo.lock"
+      ],
+      "checksum": "a9fd2f41a1cba099f79a0b6b6c35656cf7c03351a7bae8ff0f28f25270f929d2",
+      "records": [],
+      "cached_checksum_verified": true
+    },
+    {
+      "name": "r-efi",
+      "version": "6.0.0",
+      "locks": [
+        "fuzz/Cargo.lock"
+      ],
+      "checksum": "f8dcc9c7d52a811697d2151c701e0d08956f92b0e24136cf4cf27b57a6a0d9bf",
+      "records": [],
+      "cached_checksum_verified": true
+    },
+    {
+      "name": "shlex",
+      "version": "2.0.1",
+      "locks": [
+        "fuzz/Cargo.lock"
+      ],
+      "checksum": "f8fadd59c855ef2080decdef8ff161eb6661b86933c9d82e5ba29dc602a55aba",
+      "records": [
+        {
+          "id": "RUSTSEC-2024-0006",
+          "versions": {
+            "patched": [
+              ">= 1.3.0"
+            ]
+          },
+          "withdrawn": null
+        }
+      ],
+      "cached_checksum_verified": true
+    },
+    {
+      "name": "tinyvec",
+      "version": "1.13.3",
+      "locks": [
+        "Cargo.lock",
+        "fuzz/Cargo.lock"
+      ],
+      "checksum": "fd3ca314f692efd6c868f8408f53fe444634a845f96c028b97d35f6a1f79f0ee",
+      "records": [],
+      "cached_checksum_verified": true
+    },
+    {
+      "name": "unicode-ident",
+      "version": "1.0.22",
+      "locks": [
+        "Cargo.lock",
+        "fuzz/Cargo.lock"
+      ],
+      "checksum": "9312f7c4f6ff9069b165498234ce8be658059c6728633667c526e27dc2cf1df5",
+      "records": [],
+      "cached_checksum_verified": true
+    },
+    {
+      "name": "unicode-normalization",
+      "version": "0.1.24",
+      "locks": [
+        "Cargo.lock",
+        "fuzz/Cargo.lock"
+      ],
+      "checksum": "5033c97c4262335cded6d6fc3e5c18ab755e1a3dc96376350f3d8e9f009ad956",
+      "records": [],
+      "cached_checksum_verified": true
+    }
+  ]
+}

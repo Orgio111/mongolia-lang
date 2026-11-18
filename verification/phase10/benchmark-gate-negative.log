@@ -1,0 +1,3 @@
+Synthetic threshold test, five of six ratios +21%.
+Review sustained >20% regressions in lexer_ns
+exit 1 (expected rejection)

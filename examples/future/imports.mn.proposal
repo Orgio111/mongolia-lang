@@ -1,0 +1,5 @@
+// NOT EXECUTABLE in v0.1. v0.2 module proposal; registry dependencies earliest v0.8.
+// Proposal syntax and APIs subject to RFC; version is a target, not a guarantee.
+import math::square;
+fn main() { print(square(3.0)); }
+// Companion math.mn: pub fn square(x: f64) -> f64 { return x * x; }

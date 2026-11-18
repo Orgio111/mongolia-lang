@@ -1,0 +1,5 @@
+// NOT EXECUTABLE in v0.1. v0.2 module proposal; registry dependencies earliest v0.8.
+// Proposal syntax and APIs subject to RFC; version is a target, not a guarantee.
+импорт math::квадрат;
+функц main() { хэвлэх(квадрат(3.0)); }
+// Companion math.mn: нийтийн функц квадрат(x: бодит64) -> бодит64 { буцаах x * x; }

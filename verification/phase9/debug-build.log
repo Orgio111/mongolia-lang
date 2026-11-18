@@ -1,0 +1,15 @@
+$ cargo build --workspace --locked
+info: syncing channel updates for 1.100.0-x86_64-unknown-linux-gnu
+info: latest update on 2026-11-12 for version 1.100.0 (0ef1bc386 2026-11-09)
+info: component clippy is up to date
+info: component rustfmt is up to date
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded unicode-script v0.5.8
+  Downloaded unicode-normalization v0.1.24
+  Downloaded unicode-ident v1.0.22
+  Downloaded tinyvec v1.13.3
+   Compiling mn-core v0.1.1 (/workspace/scratch/b590b31c351d/phase9/mongolia-lang/crates/mn-core)
+   Compiling mn-cli v0.1.1 (/workspace/scratch/b590b31c351d/phase9/mongolia-lang/crates/mn-cli)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 14.08s
+exit 0

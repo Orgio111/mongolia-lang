@@ -1,0 +1,1 @@
+$ cargo fetch --manifest-path fuzz/Cargo.toml --locked

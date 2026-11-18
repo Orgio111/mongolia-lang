@@ -1,0 +1,2 @@
+      Loaded 1533 security advisories (from ../../phase8-rustsec)
+    Scanning fuzz/Cargo.lock for vulnerabilities (16 crate dependencies)

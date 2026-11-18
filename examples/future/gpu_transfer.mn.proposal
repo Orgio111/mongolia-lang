@@ -1,0 +1,8 @@
+// NOT EXECUTABLE in v0.1. v0.5 proposal; CUDA and borrowing not implemented.
+// Proposal syntax and APIs subject to RFC; version is a target, not a guarantee.
+fn main() {
+    let x = [[1.0, 2.0], [3.0, 4.0]];
+    let gpu_x = x.to_device(cuda:0)?;
+    let y = &gpu_x @ &gpu_x;
+    print(y.to_device(cpu)?); // [[7.0, 10.0], [15.0, 22.0]]
+}

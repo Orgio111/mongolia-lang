@@ -1,0 +1,15 @@
+   Compiling tinyvec v1.13.3
+   Compiling unicode-script v0.5.8
+   Compiling unicode-ident v1.0.22
+   Compiling unicode-normalization v0.1.24
+   Compiling mn-core v0.1.1 (/workspace/scratch/b590b31c351d/phase9/mongolia-lang/crates/mn-core)
+   Compiling mn-cli v0.1.1 (/workspace/scratch/b590b31c351d/phase9/mongolia-lang/crates/mn-cli)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.08s
+     Running unittests src/main.rs (../../p9-musl/i686-unknown-linux-musl/debug/build/mn-cli/b7db3bd26cd46aec/out/mn-b7db3bd26cd46aec)
+error: test failed, to rerun pass `-p mn-cli --bin mn`
+
+Caused by:
+  could not execute process `/workspace/scratch/b590b31c351d/phase9/mongolia-lang/../../p9-musl/i686-unknown-linux-musl/debug/build/mn-cli/b7db3bd26cd46aec/out/mn-b7db3bd26cd46aec` (never executed)
+
+Caused by:
+  Exec format error (os error 8)

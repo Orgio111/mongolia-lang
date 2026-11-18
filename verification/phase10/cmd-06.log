@@ -1,0 +1,119 @@
+$ cargo test --release --workspace --locked
+   Compiling mn-core v0.1.2 (/workspace/scratch/b590b31c351d/p10-work/mongolia-lang/crates/mn-core)
+   Compiling mn-cli v0.1.2 (/workspace/scratch/b590b31c351d/p10-work/mongolia-lang/crates/mn-cli)
+    Finished `release` profile [optimized] target(s) in 0.96s
+     Running unittests src/main.rs (../../p10-target/release/build/mn-cli/6ca853569dd43ce3/out/mn-6ca853569dd43ce3)
+
+running 1 test
+test scaffold::tests::init_rolls_back_only_files_it_created_and_allows_retry ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/cli.rs (../../p10-target/release/build/mn-cli/461fcaae55d1b9ee/out/cli-461fcaae55d1b9ee)
+
+running 15 tests
+test diagnostic_unicode_line_separator_is_inert ... ok
+test invalid_utf8 ... ok
+test init_refuses_dangling_source_without_creating_manifest ... ok
+test init_rejects_unknown_options_without_creating_a_directory ... ok
+test long_unicode_diagnostics_keep_real_column_and_bound_the_excerpt ... ok
+test diagnostic_excerpt_keeps_control_characters_inert ... ok
+test input_errors_report_the_byte_offset_and_limit_in_mongolian ... ok
+test init_preserves_existing_files ... ok
+test unsupported_command ... ok
+test acceptance_a_b_c_e ... ok
+test utf8_program_loads_from_a_non_utf8_path ... ok
+test validation_is_not_execution ... ok
+test shape_error_prevents_output ... ok
+test negative_programs ... ok
+test partial_utf8_sequences_preserve_offset_and_exit_status ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/lib.rs (../../p10-target/release/build/mn-core/dff19904a19e432a/out/mn_core-dff19904a19e432a)
+
+running 27 tests
+test diagnostics::tests::shape_catalog_keeps_evidence ... ok
+test engine::tensor::tests::buffer_allocator_defends_the_final_reservation_boundary ... ok
+test engine::tests::allocation_size_overflow_is_rejected ... ok
+test engine::tests::arithmetic ... ok
+test engine::tests::bilingual ... ok
+test engine::tests::checked_integers ... ok
+test engine::tests::errors ... ok
+test engine::tests::float_division_is_ieee ... ok
+test engine::tests::functions ... ok
+test engine::tests::matmul ... ok
+test engine::tests::mixed ... ok
+test engine::tests::invalid_shapes ... ok
+test engine::tests::differential_small_matrices ... ok
+test frontend::parser::bench_tests::stage_measurements ... ignored, measurement, run via scripts/phase8_benchmark.py
+test frontend::tests::depth_limit ... ok
+test frontend::tests::confusable_collision ... ok
+test engine::tests::validate_unused_functions ... ok
+test engine::tests::recursion_is_bounded ... ok
+test frontend::tests::bilingual ... ok
+test frontend::tests::malformed ... ok
+test frontend::tests::mixed_identifier_rejected ... ok
+test frontend::tests::nfc ... ok
+test engine::tests::tensor_identity_and_shape_properties ... ok
+test frontend::tests::precedence ... ok
+test frontend::tests::type_and_call ... ok
+test frontend::tests::unicode_spans ... ok
+test engine::tests::integer_arithmetic_matches_checked_reference ... ok
+
+test result: ok. 26 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/checked_program.rs (../../p10-target/release/build/mn-core/c4fea928b6d318b5/out/checked_program-c4fea928b6d318b5)
+
+running 3 tests
+test checked_handle_reuses_code_and_resets_execution_state ... ok
+test checker_rejects_invalid_annotation_in_an_externally_assembled_ast ... ok
+test tensor_print_budget_includes_delimiters_and_final_newline ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/phase2.rs (../../p10-target/release/build/mn-core/1f37be18f48c8ef0/out/phase2-1f37be18f48c8ef0)
+
+running 10 tests
+test all_proposed_keyword_aliases_share_canonical_tokens ... ok
+test forward_calls_and_argument_effect_order ... ok
+test large_tensor_annotation_fails_in_semantic_validation ... ok
+test lexical_rules_and_normalized_scope ... ok
+test minimum_integer_and_left_associativity ... ok
+test negation_and_subtraction_have_distinct_domains ... ok
+test strings_returned_from_a_call_keep_their_values ... ok
+test tensor_dimensions_and_result_capacity ... ok
+test exact_source_and_token_caps ... ok
+test exact_work_and_output_caps ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/stabilization.rs (../../p10-target/release/build/mn-core/2899c138fa690aa3/out/stabilization-2899c138fa690aa3)
+
+running 6 tests
+test padded_minimum_has_the_same_integer_value ... ok
+test rectangular_matmul_preserves_contraction_order ... ok
+test externally_supplied_nonfinite_literals_are_rejected ... ok
+test mongolian_limits_and_confusable_messages_identify_the_problem ... ok
+test return_mismatch_labels_the_returned_expression ... ok
+test script_checks_use_normalized_unicode_scripts ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/stress.rs (../../p10-target/release/build/mn-core/443e8be26c852356/out/stress-443e8be26c852356)
+
+running 3 tests
+test bilingual_diagnostic_catalog_matches_golden_files ... ok
+test arbitrary_unicode_does_not_panic_and_spans_are_boundaries ... ok
+test mutate_valid_programs_without_panics_or_invalid_spans ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+   Doc-tests mn_core
+
+running 1 test
+test crates/mn-core/src/engine.rs - engine::CheckedProgram (line 32) - compile fail ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+exit 0

@@ -1,0 +1,54 @@
+Workspace members: mn-cli, mn-core
+$ cargo build --workspace --locked
+   Compiling tinyvec v1.13.3
+   Compiling unicode-ident v1.0.22
+   Compiling unicode-normalization v0.1.24
+   Compiling mn-core v0.1.0 (/workspace/scratch/b590b31c351d/phase3/clean/mongolia-lang/crates/mn-core)
+   Compiling mn-cli v0.1.0 (/workspace/scratch/b590b31c351d/phase3/clean/mongolia-lang/crates/mn-cli)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.38s
+
+exit 0
+$ cargo install --path crates/mn-cli --locked
+  Installing mn-cli v0.1.0 (/workspace/scratch/b590b31c351d/phase3/clean/mongolia-lang/crates/mn-cli)
+warning: default toolchain implicitly overridden with `1.100.0-x86_64-unknown-linux-gnu` by rustup toolchain file
+  |
+  = help: use `cargo +stable install` if you meant to use the stable toolchain
+  = note: rustup selects the toolchain based on the parent environment and not the environment of the package being installed
+    Updating crates.io index
+   Compiling tinyvec v1.13.3
+   Compiling unicode-ident v1.0.22
+   Compiling unicode-normalization v0.1.24
+   Compiling mn-core v0.1.0 (/workspace/scratch/b590b31c351d/phase3/clean/mongolia-lang/crates/mn-core)
+   Compiling mn-cli v0.1.0 (/workspace/scratch/b590b31c351d/phase3/clean/mongolia-lang/crates/mn-cli)
+    Finished `release` profile [optimized] target(s) in 7.33s
+  Installing /workspace/scratch/b590b31c351d/phase3/clean/install/bin/mn
+   Installed package `mn-cli v0.1.0 (/workspace/scratch/b590b31c351d/phase3/clean/mongolia-lang/crates/mn-cli)` (executable `mn`)
+
+exit 0
+$ mn --version
+mn 0.1.0
+
+exit 0
+$ mn run examples/matmul.mn
+[[19.0, 22.0], [43.0, 50.0]]
+
+exit 0
+$ mn run examples/matmul_mn.mn
+[[19.0, 22.0], [43.0, 50.0]]
+
+exit 0
+$ mn init hello
+Created mn.toml and main.mn
+
+exit 0
+$ mn run hello/main.mn
+Hello, Mongolia!
+
+exit 0
+$ mn check examples/negative/shape_mismatch_mn.mn --lang mn
+Алдаа[E_SHAPE] 5:12: [2, 3] @ [2, 2]: дотоод хэмжээсүүд 3 ба 2 хоорондоо тохирохгүй
+    хэвлэх(А @ Б);
+           ^^^^^
+Эх кодыг шалгана уу
+
+exit 1

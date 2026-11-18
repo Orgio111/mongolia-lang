@@ -1,0 +1,55 @@
+name: Rust conformance
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 4 * * 1'
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - run: rustup show
+      - run: cargo build --release --workspace --locked
+      - run: python -X utf8 scripts/verify.py
+      - if: runner.os == 'Linux'
+        run: python scripts/release/verify_docs.py target/release/mn
+      - run: cargo test --release --workspace --locked
+      - run: python -X utf8 scripts/verify_install.py
+      - if: runner.os == 'Linux'
+        run: python scripts/verify_reproducible.py
+  fuzz-and-advisories:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - run: rustup toolchain install nightly-2026-11-12 --profile minimal
+      - run: cargo install --locked cargo-fuzz --version 0.13.2
+      - run: cargo install --locked cargo-audit --version 0.22.1
+      - run: cargo audit --file Cargo.lock
+      - run: cargo audit --file fuzz/Cargo.lock
+      - run: cargo fetch --manifest-path fuzz/Cargo.toml --locked
+      - name: Bounded ASan and leak campaigns
+        env:
+          CARGO_NET_OFFLINE: 'true'
+          ASAN_OPTIONS: detect_leaks=1
+        run: |
+          for t in lexer parser runtime; do
+            mkdir -p "fuzz/corpus/$t"
+            cargo +nightly-2026-11-12 fuzz run "$t" "fuzz/corpus/$t" "fuzz/seeds/$t" -- -runs=50000 -seed=20261118 -max_len=4096 -timeout=10
+          done
+          git diff --exit-code -- fuzz/Cargo.lock

@@ -1,0 +1,45 @@
+$ python3 scripts/verify_install.py
+  Installing mn-cli v0.1.2 (/workspace/scratch/b590b31c351d/p10-work/mongolia-lang/crates/mn-cli)
+warning: default toolchain implicitly overridden with `1.100.0-x86_64-unknown-linux-gnu` by rustup toolchain file
+  |
+  = help: use `cargo +stable install` if you meant to use the stable toolchain
+  = note: rustup selects the toolchain based on the parent environment and not the environment of the package being installed
+    Updating crates.io index
+   Compiling tinyvec v1.13.3
+   Compiling unicode-ident v1.0.22
+   Compiling unicode-script v0.5.8
+   Compiling unicode-normalization v0.1.24
+   Compiling mn-core v0.1.2 (/workspace/scratch/b590b31c351d/p10-work/mongolia-lang/crates/mn-core)
+   Compiling mn-cli v0.1.2 (/workspace/scratch/b590b31c351d/p10-work/mongolia-lang/crates/mn-cli)
+    Finished `release` profile [optimized] target(s) in 10.05s
+  Installing /tmp/mn-install-sse0dmrk/install/bin/mn
+   Installed package `mn-cli v0.1.2 (/workspace/scratch/b590b31c351d/p10-work/mongolia-lang/crates/mn-cli)` (executable `mn`)
+warning: be sure to add `/tmp/mn-install-sse0dmrk/install/bin` to your PATH to be able to run the installed binaries
+PASS --version  (exit 0)
+PASS --help  (exit 0)
+PASS init /tmp/mn-install-sse0dmrk/hello (exit 0)
+PASS check /tmp/mn-install-sse0dmrk/hello/main.mn (exit 0)
+PASS run /tmp/mn-install-sse0dmrk/hello/main.mn (exit 0)
+PASS check examples/functions.mn --lang en (exit 0)
+PASS run examples/functions.mn --lang en (exit 0)
+PASS check examples/functions_mn.mn --lang mn (exit 0)
+PASS run examples/functions_mn.mn --lang mn (exit 0)
+PASS check examples/hello.mn --lang en (exit 0)
+PASS run examples/hello.mn --lang en (exit 0)
+PASS check examples/hello_mn.mn --lang mn (exit 0)
+PASS run examples/hello_mn.mn --lang mn (exit 0)
+PASS check examples/matmul.mn --lang en (exit 0)
+PASS run examples/matmul.mn --lang en (exit 0)
+PASS check examples/matmul_mn.mn --lang mn (exit 0)
+PASS run examples/matmul_mn.mn --lang mn (exit 0)
+PASS check examples/mixed_syntax.mn --lang en (exit 0)
+PASS run examples/mixed_syntax.mn --lang en (exit 0)
+PASS check examples/negative/shape_mismatch.mn --lang en (exit 1)
+PASS run examples/negative/shape_mismatch.mn --lang en (exit 1)
+PASS check examples/negative/shape_mismatch_mn.mn --lang mn (exit 1)
+PASS run examples/negative/shape_mismatch_mn.mn --lang mn (exit 1)
+PASS check examples/scalar.mn --lang en (exit 0)
+PASS run examples/scalar.mn --lang en (exit 0)
+PASS check examples/scalar_mn.mn --lang mn (exit 0)
+PASS run examples/scalar_mn.mn --lang mn (exit 0)
+exit 0

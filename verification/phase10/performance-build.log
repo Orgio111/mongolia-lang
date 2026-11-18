@@ -1,0 +1,18 @@
+   Compiling tinyvec v1.13.3
+   Compiling unicode-normalization v0.1.24
+   Compiling unicode-ident v1.0.22
+   Compiling unicode-script v0.5.8
+   Compiling mn-core v0.1.1 (/workspace/scratch/b590b31c351d/p9-final-checkout/mongolia-lang/crates/mn-core)
+   Compiling mn-cli v0.1.1 (/workspace/scratch/b590b31c351d/p9-final-checkout/mongolia-lang/crates/mn-cli)
+    Finished `release` profile [optimized] target(s) in 3.53s
+   Compiling mn-core v0.1.1 (/workspace/scratch/b590b31c351d/p9-final-checkout/mongolia-lang/crates/mn-core)
+    Finished `release` profile [optimized] target(s) in 2.37s
+   Compiling tinyvec v1.13.3
+   Compiling unicode-normalization v0.1.24
+   Compiling unicode-ident v1.0.22
+   Compiling unicode-script v0.5.8
+   Compiling mn-core v0.1.2 (/workspace/scratch/b590b31c351d/p10-work/mongolia-lang/crates/mn-core)
+   Compiling mn-cli v0.1.2 (/workspace/scratch/b590b31c351d/p10-work/mongolia-lang/crates/mn-cli)
+    Finished `release` profile [optimized] target(s) in 3.20s
+   Compiling mn-core v0.1.2 (/workspace/scratch/b590b31c351d/p10-work/mongolia-lang/crates/mn-core)
+    Finished `release` profile [optimized] target(s) in 2.67s

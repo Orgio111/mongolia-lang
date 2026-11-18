@@ -1,0 +1,8 @@
+---
+description: Mongolia compiler semantics and evidence
+alwaysApply: true
+---
+Read AGENTS.md, SPEC.md and BUILD_REPORT.md. Distinguish implemented syntax from future proposals.
+Preserve bilingual equivalence, source spans, exact scalar typing and static tensor shape checking.
+No fake GPU/AD support, unchecked allocation products or panic-based user errors. Record executed
+verification, and document any environment block. Keep executable examples compatible with v0.1.

@@ -1,0 +1,23 @@
+    Finished `release` profile [optimized] target(s) in 0.00s
+    Finished `release` profile [optimized] target(s) in 0.00s
+     Running unittests src/lib.rs (../../phase8-target-clean/release/build/mn-core/fa61305a82566d11/out/mn_core-fa61305a82566d11)
+
+thread 'frontend::parser::bench_tests::stage_measurements' (17) panicked at crates/mn-core/src/frontend/bench_tests.rs:11:80:
+called `Result::unwrap()` on an `Err` value: Error { span: Span { start: 1003, end: 1006 }, code: "E_PARSE", detail: "expression exceeds 256 nodes" }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: test failed, to rerun pass `-p mn-core --lib`
+Traceback (most recent call last):
+  File "/workspace/scratch/b590b31c351d/phase8/mongolia-lang/scripts/phase8_benchmark.py", line 101, in <module>
+    main()
+  File "/workspace/scratch/b590b31c351d/phase8/mongolia-lang/scripts/phase8_benchmark.py", line 50, in main
+    probe = run("cargo", "test", "--locked", "--release", "-p", "mn-core", "--lib",
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/b590b31c351d/phase8/mongolia-lang/scripts/phase8_benchmark.py", line 23, in run
+    return subprocess.check_output(args, cwd=ROOT, text=True).strip()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '('cargo', 'test', '--locked', '--release', '-p', 'mn-core', '--lib', 'stage_measurements', '--', '--ignored', '--nocapture')' returned non-zero exit status 101.

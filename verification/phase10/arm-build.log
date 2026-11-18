@@ -1,0 +1,9 @@
+    Blocking waiting for file lock on package cache
+   Compiling tinyvec v1.13.3
+   Compiling unicode-ident v1.0.22
+   Compiling unicode-script v0.5.8
+   Compiling unicode-normalization v0.1.24
+   Compiling mn-core v0.1.2 (/workspace/scratch/b590b31c351d/p10-work/mongolia-lang/crates/mn-core)
+   Compiling mn-cli v0.1.2 (/workspace/scratch/b590b31c351d/p10-work/mongolia-lang/crates/mn-cli)
+    Finished `release` profile [optimized] target(s) in 4.03s
+mn 0.1.2

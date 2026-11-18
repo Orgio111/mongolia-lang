@@ -1,0 +1,22 @@
+# Supply-chain verification for the 0.1.2 candidate
+
+## Inputs and inventory
+
+The incoming 0.1.1 ZIP SHA-256 is 1a8ec2cef8f86f30c1faeb94ef87a4d0f1dcfe33bddbf3ad0698f87529ec2775. Its 235 inventoried files passed extraction verification. The candidate pins Rust 1.100.0, three direct registry crates and one transitive crate. The isolated fuzz harness has its own lock. The production and fuzz lockfiles together contain 14 distinct registry crate/version pairs. scripts/release/inventory.py compared every cached .crate digest to Cargo.lock, matched declared licenses against the reviewed names, versions and expressions, and copied the 11 production upstream notice files. The legacy MIT/Apache-2.0 expression is represented as MIT OR Apache-2.0 in SPDX.
+
+- [SBOM.spdx.json](release/SBOM.spdx.json) describes both local packages, the four production registry packages and dependency edges. The generated document passed validation against the SPDX 2.3.1 JSON schema. The additional fuzz tools are recorded separately in [dependency-inventory.json](release/dependency-inventory.json).
+- [License policy](release/reviewed-licenses.json) retains the Unicode-3.0 requirement of unicode-ident. Tinyvec offers Zlib, Apache or MIT. Fuzz-only libfuzzer-sys also declares NCSA; r-efi offers a choice including MIT. Scope is the declared Cargo graph and delivered notices. A changed package or expression fails the inventory gate pending review.
+- Binary packages also carry the toolchain's COPYRIGHT-library.html and license texts. Linux musl packages include musl’s upstream COPYRIGHT from the Debian mirror of the 1.2.5 source tarball. The Cargo SBOM does not enumerate each Rust sysroot object or OS component. Distribution-specific legal review remains a release-owner responsibility. [musl source mirror](https://deb.debian.org/debian/pool/main/m/musl/).
+- Cargo audit 0.22.1 scanned the two lockfiles against a freshly fetched RustSec database, revision 472a4c9a785030434f15d7da84964d60fbe789ab, 1,533 advisories. Both commands exited 0. This is a dated advisory check; re-run it before public release. [Production](verification/phase10/audit.log) · [Fuzz](verification/phase10/audit-fuzz.log) · [RustSec](https://rustsec.org/).
+
+## Artifact identity and signing
+
+The kit carries a top-level SHA256SUMS for its members. The source ZIP has a separate inventory. Each binary ZIP contains BUILD.json with input hashes, target, rustc commit, command, executable hash and size. scripts/release/build_binary.py builds in two different clean paths with locked offline Cargo, disabled incremental compilation, a fixed epoch and remapped paths. It raises an error if the executable bytes differ. The two Linux packages passed this comparison and were exercised after extraction. The input archive identifies the baseline for this ZIP-based project; no Git revision or hosted builder identity is asserted for this local build.
+
+After approval, a release custodian signs the top-level checksum index with a dedicated key using `sh scripts/release/sign.sh /path/to/approved_key SHA256SUMS`. Distribute the maintainer identity/public-key fingerprint independently. A reviewer verifies the signature with `ssh-keygen -Y verify -f trusted_allowed_signers -I APPROVED_ID -n mongolia-release -s SHA256SUMS.sig < SHA256SUMS` before verifying file hashes. Document key rotation and revocation before publishing the first fingerprint. A disposable test key signed a fixture; verification accepted the original and rejected a modified fixture. The supplied deliverables are unsigned. [Dry-run log](verification/phase10/signing-dry-run.log).
+
+## Workflow permissions and residual risks
+
+The conformance and distribution workflows use read-only contents permission and immutable action commits. The release jobs upload workflow artifacts only. No registry token, release secret, write-scoped publishing job or hosted attestation is configured. Proposed hosted provenance would bind the source revision, workflow identity and package digest after a real repository and trust policy exist. [GitHub attestations](https://docs.github.com/en/actions/concepts/security/artifact-attestations).
+
+Full Unicode confusable coverage, total-process OOM recovery, leak verification, native platform evidence and public security-contact activation remain open. Run untrusted .mn input in a separately constrained process. See SECURITY.md, KNOWN_LIMITATIONS.md and RELEASE_READINESS.md.

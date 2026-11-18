@@ -1,0 +1,4 @@
+$ cargo --version
+cargo 1.100.0 (3acc79c0c 2026-11-05)
+
+exit 0

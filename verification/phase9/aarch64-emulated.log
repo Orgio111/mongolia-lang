@@ -1,0 +1,92 @@
+   Compiling tinyvec v1.13.3
+   Compiling unicode-script v0.5.8
+   Compiling unicode-ident v1.0.22
+   Compiling unicode-normalization v0.1.24
+   Compiling mn-core v0.1.1 (/workspace/scratch/b590b31c351d/phase9/mongolia-lang/crates/mn-core)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.68s
+     Running unittests src/lib.rs (../../p9-musl/aarch64-unknown-linux-musl/debug/build/mn-core/fcdec1aa871444b1/out/mn_core-fcdec1aa871444b1)
+
+running 27 tests
+test diagnostics::tests::shape_catalog_keeps_evidence ... ok
+test engine::tensor::tests::buffer_allocator_defends_the_final_reservation_boundary ... ok
+test engine::tests::allocation_size_overflow_is_rejected ... ok
+test engine::tests::checked_integers ... ok
+test engine::tests::arithmetic ... ok
+test engine::tests::float_division_is_ieee ... ok
+test engine::tests::errors ... ok
+test engine::tests::bilingual ... ok
+test engine::tests::functions ... ok
+test engine::tests::invalid_shapes ... ok
+test engine::tests::matmul ... ok
+test engine::tests::recursion_is_bounded ... ok
+test frontend::parser::bench_tests::stage_measurements ... ignored, measurement, run via scripts/phase8_benchmark.py
+test engine::tests::mixed ... ok
+test engine::tests::validate_unused_functions ... ok
+test frontend::tests::depth_limit ... ok
+test frontend::tests::bilingual ... ok
+test frontend::tests::confusable_collision ... ok
+test frontend::tests::malformed ... ok
+test frontend::tests::mixed_identifier_rejected ... ok
+test frontend::tests::precedence ... ok
+test frontend::tests::unicode_spans ... ok
+test frontend::tests::type_and_call ... ok
+test frontend::tests::nfc ... ok
+test engine::tests::tensor_identity_and_shape_properties ... ok
+test engine::tests::differential_small_matrices ... ok
+test engine::tests::integer_arithmetic_matches_checked_reference ... ok
+
+test result: ok. 26 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.40s
+
+     Running tests/checked_program.rs (../../p9-musl/aarch64-unknown-linux-musl/debug/build/mn-core/efa798d424f2aed9/out/checked_program-efa798d424f2aed9)
+
+running 3 tests
+test checker_rejects_invalid_annotation_in_an_externally_assembled_ast ... ok
+test checked_handle_reuses_code_and_resets_execution_state ... ok
+test tensor_print_budget_includes_delimiters_and_final_newline ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.77s
+
+     Running tests/phase2.rs (../../p9-musl/aarch64-unknown-linux-musl/debug/build/mn-core/30141bda7298ccfc/out/phase2-30141bda7298ccfc)
+
+running 10 tests
+test all_proposed_keyword_aliases_share_canonical_tokens ... ok
+test minimum_integer_and_left_associativity ... ok
+test large_tensor_annotation_fails_in_semantic_validation ... ok
+test forward_calls_and_argument_effect_order ... ok
+test strings_returned_from_a_call_keep_their_values ... ok
+test lexical_rules_and_normalized_scope ... ok
+test negation_and_subtraction_have_distinct_domains ... ok
+test tensor_dimensions_and_result_capacity ... ok
+test exact_source_and_token_caps ... ok
+test exact_work_and_output_caps ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.19s
+
+     Running tests/stabilization.rs (../../p9-musl/aarch64-unknown-linux-musl/debug/build/mn-core/cac3077c38a0385e/out/stabilization-cac3077c38a0385e)
+
+running 6 tests
+test mongolian_limits_and_confusable_messages_identify_the_problem ... ok
+test padded_minimum_has_the_same_integer_value ... ok
+test externally_supplied_nonfinite_literals_are_rejected ... ok
+test return_mismatch_labels_the_returned_expression ... ok
+test rectangular_matmul_preserves_contraction_order ... ok
+test script_checks_use_normalized_unicode_scripts ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+
+     Running tests/stress.rs (../../p9-musl/aarch64-unknown-linux-musl/debug/build/mn-core/5980e183afb24338/out/stress-5980e183afb24338)
+
+running 3 tests
+test bilingual_diagnostic_catalog_matches_golden_files ... ok
+test arbitrary_unicode_does_not_panic_and_spans_are_boundaries ... ok
+test mutate_valid_programs_without_panics_or_invalid_spans ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.18s
+
+   Doc-tests mn_core
+
+running 1 test
+test crates/mn-core/src/engine.rs - engine::CheckedProgram (line 32) - compile fail ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+

@@ -1,0 +1,11 @@
+PASS examples/functions.mn exit=0 stdout/stderr matched
+PASS examples/functions_mn.mn exit=0 stdout/stderr matched
+PASS examples/hello.mn exit=0 stdout/stderr matched
+PASS examples/hello_mn.mn exit=0 stdout/stderr matched
+PASS examples/matmul.mn exit=0 stdout/stderr matched
+PASS examples/matmul_mn.mn exit=0 stdout/stderr matched
+PASS examples/mixed_syntax.mn exit=0 stdout/stderr matched
+PASS examples/negative/shape_mismatch.mn exit=1 stdout/stderr matched
+PASS examples/negative/shape_mismatch_mn.mn exit=1 stdout/stderr matched
+PASS examples/scalar.mn exit=0 stdout/stderr matched
+PASS examples/scalar_mn.mn exit=0 stdout/stderr matched

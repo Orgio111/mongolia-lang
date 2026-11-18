@@ -1,0 +1,34 @@
+# Mongolia (.mn), v0.1.2 compiler, language specification 0.1 revision 1
+
+Compiler: mn. Native AI. Native Performance. This tagline is a mission, not a benchmark.
+Read SPEC.md, grammar.ebnf, ARCHITECTURE.md, STATUS.md and BUILD_REPORT.md before generating code.
+
+Supported: fn/функц, let/хувьсагч, return/буцаах, print/хэвлэх, true/үнэн,
+false/худал; types i64/бүхэл64, f64/бодит64, bool/логик, string/мөр,
+Tensor/Тензор and unit (). Additional reserved aliases (syntax proposed): mut/өөрчлөгдөх, const/тогтмол, if/хэрэв,
+else/үгүйбол, loop/давтах, while/зуур, for/бүр, in/дотор, break/зогсох,
+continue/үргэлжлэх, struct/бүтэц, enum/тоочилт, trait/шинж, impl/хэрэгжүүлэх,
+import/импорт, pub/нийтийн, grad/уламжлал, f32/бодит32, i32/бүхэл32.
+NFC XID identifiers; avoid Latin/Cyrillic inside a single name and confusable name collisions.
+Mixed-language keywords are allowed. Functions have typed parameters and explicit returns.
+Bindings are immutable. Arithmetic is exact-type i64 or f64; integer overflow traps.
+Tensor cells must be f64, rectangular and nonempty; static rank two only.
+Tensor<f64,[M,N]> uses positive integer dimensions. A[M,K] @ B[K,N] -> C[M,N].
+No implicit scalar conversions, broadcasting, control flow, dynamic shapes, native AD, GPU,
+FFI, imports, package management, ownership checking or standard library module APIs yet.
+print is the implemented output primitive. Future documents are not executable specifications.
+
+Valid source:
+fn add(a: i64, b: i64) -> i64 { return a + b; }
+функц main() { хувьсагч x = add(12, 30); хэвлэх(x); }
+
+Valid tensor source:
+fn main() { let A = [[1.0, 2.0]]; let B = [[3.0], [4.0]]; print(A @ B); }
+
+Tensor + - * / are elementwise for identical shapes only; unary minus accepts only i64 and f64.
+Commands: mn run FILE; mn check FILE; mn init [DIRECTORY]; mn --help; mn --version.
+Diagnostics: --lang en or --lang mn. Unsupported commands return errors.
+Common errors: undefined names, duplicate bindings, ragged tensors, wrong argument count,
+wrong parameter/return type, incompatible inner tensor dimensions, missing semicolons/braces.
+No tests or performance claims may be invented. This file is guidance; AI assistants are not
+assumed to discover or obey it automatically. See AGENTS.md for repository contribution rules.

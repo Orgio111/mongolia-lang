@@ -1,0 +1,9 @@
+// NOT EXECUTABLE in v0.1. future FFI proposal, earliest v0.4; no ABI implementation.
+// Proposal syntax and APIs subject to RFC; version is a target, not a guarantee.
+extern "C" {
+    функц mn_square(x: бодит64) -> бодит64;
+}
+функц main() {
+    хувьсагч y = unsafe { mn_square(3.0) };
+    хэвлэх(y); // 9.0, linked with квадрат.c shown дотор SHOWCASES.md
+}

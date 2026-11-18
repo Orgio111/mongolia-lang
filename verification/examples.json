@@ -1,0 +1,68 @@
+[
+  {
+    "file": "examples/functions.mn",
+    "exit_code": 0,
+    "stdout": "42\n",
+    "stderr": ""
+  },
+  {
+    "file": "examples/functions_mn.mn",
+    "exit_code": 0,
+    "stdout": "42\n",
+    "stderr": ""
+  },
+  {
+    "file": "examples/hello.mn",
+    "exit_code": 0,
+    "stdout": "Hello, Mongolia!\n",
+    "stderr": ""
+  },
+  {
+    "file": "examples/hello_mn.mn",
+    "exit_code": 0,
+    "stdout": "Сайн байна уу, Монгол!\n",
+    "stderr": ""
+  },
+  {
+    "file": "examples/matmul.mn",
+    "exit_code": 0,
+    "stdout": "[[19.0, 22.0], [43.0, 50.0]]\n",
+    "stderr": ""
+  },
+  {
+    "file": "examples/matmul_mn.mn",
+    "exit_code": 0,
+    "stdout": "[[19.0, 22.0], [43.0, 50.0]]\n",
+    "stderr": ""
+  },
+  {
+    "file": "examples/mixed_syntax.mn",
+    "exit_code": 0,
+    "stdout": "30\n",
+    "stderr": ""
+  },
+  {
+    "file": "examples/negative/shape_mismatch.mn",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Error[E_SHAPE] 5:11: [2, 3] @ [2, 2]: inner dimensions 3 and 2 are incompatible\n    print(A @ B);\n          ^^^^^\nCheck the source expression\n"
+  },
+  {
+    "file": "examples/negative/shape_mismatch_mn.mn",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Алдаа[E_SHAPE] 5:12: [2, 3] @ [2, 2]: дотоод хэмжээсүүд 3 ба 2 хоорондоо тохирохгүй\n    хэвлэх(А @ Б);\n           ^^^^^\nЭх кодыг шалгана уу\n"
+  },
+  {
+    "file": "examples/scalar.mn",
+    "exit_code": 0,
+    "stdout": "14\n3.5\ntrue\n",
+    "stderr": ""
+  },
+  {
+    "file": "examples/scalar_mn.mn",
+    "exit_code": 0,
+    "stdout": "14\n3.5\ntrue\n",
+    "stderr": ""
+  }
+]

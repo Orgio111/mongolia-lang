@@ -1,0 +1,57 @@
+[
+  {
+    "command": "cargo build --workspace --locked",
+    "exit": 0,
+    "log": "command-01.log"
+  },
+  {
+    "command": "cargo build --release --workspace --locked",
+    "exit": 0,
+    "log": "command-02.log"
+  },
+  {
+    "command": "cargo test --workspace --locked",
+    "exit": 0,
+    "log": "command-03.log"
+  },
+  {
+    "command": "cargo fmt --all -- --check",
+    "exit": 0,
+    "log": "command-04.log"
+  },
+  {
+    "command": "cargo clippy --workspace --all-targets -- -D warnings",
+    "exit": 0,
+    "log": "command-05.log"
+  },
+  {
+    "command": "cargo test --release --workspace --locked",
+    "exit": 0,
+    "log": "command-06.log"
+  },
+  {
+    "command": "cargo tree --locked --workspace",
+    "exit": 0,
+    "log": "command-07.log"
+  },
+  {
+    "command": "python3 scripts/verify.py",
+    "exit": 0,
+    "log": "command-08.log"
+  },
+  {
+    "command": "python3 scripts/verify_install.py",
+    "exit": 0,
+    "log": "command-09.log"
+  },
+  {
+    "command": "python3 scripts/check_matmul.py ../../phase8-target-clean/debug/mn ../../phase8-target-clean/release/mn",
+    "exit": 0,
+    "log": "command-10.log"
+  },
+  {
+    "command": "cargo fetch --manifest-path fuzz/Cargo.toml --locked",
+    "exit": 0,
+    "log": "command-11.log"
+  }
+]
