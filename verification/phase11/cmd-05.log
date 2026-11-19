@@ -1,0 +1,5 @@
+$ cargo clippy --workspace --all-targets --locked -- -D warnings
+    Checking mn-core v0.2.0-dev.1 (/workspace/scratch/b590b31c351d/p11/crates/mn-core)
+    Checking mn-cli v0.2.0-dev.1 (/workspace/scratch/b590b31c351d/p11/crates/mn-cli)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.16s
+exit 0

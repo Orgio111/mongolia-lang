@@ -1,4 +1,4 @@
-# Mongolia (.mn), v0.1.2 compiler, language specification 0.1 revision 1
+# Mongolia (.mn), 0.2.0-dev.1 development compiler
 
 Compiler: mn. Native AI. Native Performance. This tagline is a mission, not a benchmark.
 Read SPEC.md, grammar.ebnf, ARCHITECTURE.md, STATUS.md and BUILD_REPORT.md before generating code.
@@ -14,6 +14,7 @@ Mixed-language keywords are allowed. Functions have typed parameters and explici
 Bindings are immutable. Arithmetic is exact-type i64 or f64; integer overflow traps.
 Tensor cells must be f64, rectangular and nonempty; static rank two only.
 Tensor<f64,[M,N]> uses positive integer dimensions. A[M,K] @ B[K,N] -> C[M,N].
+Explicit i64(e) and f64(e), including their Mongolian aliases, accept numeric operands. See LANGUAGE_SPECIFICATION_UPDATE.md.
 No implicit scalar conversions, broadcasting, control flow, dynamic shapes, native AD, GPU,
 FFI, imports, package management, ownership checking or standard library module APIs yet.
 print is the implemented output primitive. Future documents are not executable specifications.

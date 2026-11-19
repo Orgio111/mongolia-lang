@@ -1,5 +1,7 @@
 # Project status — v0.1 foundation candidate
 
+Current branch: Phase 11 development, 0.2.0-dev.1. See PHASE_11_REPORT.md and TEST_VERIFICATION_REPORT.md. The earlier entries describe their named snapshots.
+
 **Current compiler 0.1.2.** Phase 10 prepared the release kit. [Release readiness](RELEASE_READINESS.md) is the current gate decision. Earlier entries below record earlier snapshots.
 
 **Compiler v0.1.1 · architecture edition v3.0.** Phase 9 stabilized the validated AST interpreter. See the [Phase 9 results](PHASE_9_REPORT.md), [release limits](KNOWN_LIMITATIONS.md) and [Phase 10 entry criteria](PHASE_10_READINESS.md).

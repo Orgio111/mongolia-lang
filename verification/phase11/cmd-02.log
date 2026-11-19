@@ -1,0 +1,5 @@
+$ cargo build --release --workspace --locked
+   Compiling mn-core v0.2.0-dev.1 (/workspace/scratch/b590b31c351d/p11/crates/mn-core)
+   Compiling mn-cli v0.2.0-dev.1 (/workspace/scratch/b590b31c351d/p11/crates/mn-cli)
+    Finished `release` profile [optimized] target(s) in 1.30s
+exit 0

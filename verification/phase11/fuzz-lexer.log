@@ -1,0 +1,5 @@
+     Running `../p11-fuzz/x86_64-unknown-linux-gnu/release/lexer -artifact_prefix=/workspace/scratch/b590b31c351d/p11/fuzz/artifacts/lexer/ -runs=50000 -seed=20261119 -max_len=4096 -timeout=10 ../p11-corpus/lexer fuzz/seeds/lexer`
+INFO: Seed: 20261119
+#50000	DONE   cov: 853 ft: 3351 corp: 487/29Kb lim: 128 exec/s: 25000 rss: 225Mb
+Done 50000 runs in 2 second(s)
+exit 0

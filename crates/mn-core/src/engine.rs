@@ -3,6 +3,7 @@ use crate::frontend::{Error, Function, Span};
 use std::collections::HashMap;
 
 mod checker;
+mod hir;
 mod runtime;
 mod tensor;
 pub use checker::{check, validate};
@@ -24,7 +25,7 @@ fn error(span: &Span, code: &'static str, detail: impl Into<String>) -> Error {
         detail: detail.into(),
     }
 }
-type Signatures<'a> = HashMap<&'a str, &'a Function>;
+type Signatures<'a> = HashMap<&'a str, (usize, &'a Function)>;
 
 /// An immutable view of all functions after whole-program static validation.
 /// The borrow keeps the checked syntax and signatures valid for the lifetime of the view.
@@ -38,6 +39,14 @@ type Signatures<'a> = HashMap<&'a str, &'a Function>;
 /// ```
 pub struct CheckedProgram<'a> {
     signatures: Signatures<'a>,
+    hir: hir::Module<'a>,
+}
+
+impl CheckedProgram<'_> {
+    /// Backend-independent text for semantic conformance tests.
+    pub fn hir_dump(&self) -> String {
+        self.hir.dump()
+    }
 }
 
 #[cfg(test)]

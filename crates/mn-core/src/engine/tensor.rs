@@ -21,7 +21,8 @@ pub(super) fn product_area(
 ) -> Result<usize, Error> {
     let (m, k) = left;
     let (j, n) = right;
-    if k != j {
+    use crate::shape::{require_equal, Dimension::Known, Equality};
+    if require_equal(Known(k), Known(j)) != Equality::Proven {
         return Err(error(
             span,
             "E_SHAPE",

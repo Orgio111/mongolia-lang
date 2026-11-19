@@ -1,0 +1,28 @@
+$ python3 scripts/verify_reproducible.py
+   Compiling tinyvec v1.13.3
+   Compiling unicode-script v0.5.8
+   Compiling unicode-ident v1.0.22
+   Compiling unicode-normalization v0.1.24
+   Compiling mn-core v0.2.0-dev.1 (/tmp/tmpn5uudves/tree-one/crates/mn-core)
+   Compiling mn-cli v0.2.0-dev.1 (/tmp/tmpn5uudves/tree-one/crates/mn-cli)
+    Finished `release` profile [optimized] target(s) in 1.78s
+   Compiling tinyvec v1.13.3
+   Compiling unicode-script v0.5.8
+   Compiling unicode-ident v1.0.22
+   Compiling unicode-normalization v0.1.24
+   Compiling mn-core v0.2.0-dev.1 (/tmp/tmpn5uudves/longer-source-path-two/crates/mn-core)
+   Compiling mn-cli v0.2.0-dev.1 (/tmp/tmpn5uudves/longer-source-path-two/crates/mn-cli)
+    Finished `release` profile [optimized] target(s) in 1.84s
+{
+  "rust": "rustc 1.100.0 (0ef1bc386 2026-11-09)\nbinary: rustc\ncommit-hash: 0ef1bc386059596dada8fb65b50425aab2ea637a\ncommit-date: 2026-11-09\nhost: x86_64-unknown-linux-gnu\nrelease: 1.100.0\nLLVM version: 23.1.5\n",
+  "first": {
+    "bytes": 867072,
+    "sha256": "22923356549faadfa137c08a61c456b414bb701f696e2f780991c0f3fe64347d"
+  },
+  "second": {
+    "bytes": 867072,
+    "sha256": "22923356549faadfa137c08a61c456b414bb701f696e2f780991c0f3fe64347d"
+  },
+  "equal": true
+}
+exit 0

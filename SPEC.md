@@ -1,5 +1,7 @@
 # Mongolia v0.1 language specification
 
+For compiler 0.2.0-dev.1 the normative LANGUAGE_SPECIFICATION_UPDATE.md extends the foundation below. grammar.ebnf includes explicit numeric conversions.
+
 **Specification 0.1, revision 1.** Compiler 0.1.2 implements the same source language and observables as compiler 0.1.1. The historical foundation rules below are normative. The compiler and specification use separate version identifiers. See [VERSIONING.md](VERSIONING.md).
 
 This document defines the implemented **v0.1 subset**. It is not a finalized specification for

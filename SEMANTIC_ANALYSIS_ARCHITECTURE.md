@@ -1,0 +1,5 @@
+# Semantic analysis
+
+The signature table maps canonical names to source-order function IDs and AST declarations. Collect all signatures before analyzing bodies to resolve forward and recursive calls. Main must have zero parameters and a unit result. Validate every body even when no call reaches it. A separate local table maps NFC names to slot/type pairs. Local and function namespaces are distinct. Parameters precede let slots. Infer an initializer before exposing its binding. Preserve declaration and expression order so earlier errors retain precedence.
+
+The compiler resolves, infers and emits typed HIR during one traversal. Calls validate arity first and arguments from left to right. The verifier consumes the result with no name lookup. It simulates typed expression stacks and slot initialization, validates function domains, tensor products and statement termination. A non-unit function must return; a statement after any return is unreachable. The language currently has one path per function. Exhaustive pattern matching and branch-sensitive joins will require control-flow syntax and dedicated analysis.

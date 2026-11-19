@@ -1,0 +1,5 @@
+# Tensor rules and shape constraints
+
+Closed Tensor(r,c) denotes positive rank-two f64 row-major storage. Literal rows must be rectangular with f64 cells. Exact elementwise compatibility requires equal axes. For [m,k] @ [j,n], constrain k=j before checking output area m*n. Check element and byte arithmetic before allocation. The verifier derives constructor cell count from checked dimensions and consumes that many f64 operands.
+
+The experimental Rust shape API represents Known(n), Symbol(binder,axis) and Runtime(value,axis), relative to one planning context. Equality of identical identities is proven; distinct known sizes contradict. All other pairs yield an explicit equality obligation that carries the two dimensions. Only positive concrete dimensions are legal. The planner cannot discharge unrelated symbols from equal display names. This is a single equality rule, not a general unifier. Current source accepts only known dimensions. Emitting and executing runtime shape guards requires a future dynamic tensor RFC and backend.

@@ -1,4 +1,6 @@
-# Mongolia (.mn) — foundation v0.1.2
+# Mongolia (.mn) — v0.2.0-dev.1 · Phase 11
+
+**Development branch.** Read [the Phase 11 report](PHASE_11_REPORT.md) and [language update](LANGUAGE_SPECIFICATION_UPDATE.md) for typed HIR, explicit numeric conversions and verification. Build this checkout with Cargo for the development compiler. The distribution information below refers to the stable Phase 10 candidate.
 
 **Compiler v0.1.2 · language specification 0.1 revision 1 · architecture edition v3.0.** [Install mn](INSTALLATION_GUIDE.md), [start writing programs](docs/USER_GUIDE.md), or read the [platform results](PLATFORM_SUPPORT_MATRIX.md) and [release gate](RELEASE_READINESS.md).
 

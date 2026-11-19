@@ -2,8 +2,8 @@
   "spdxVersion": "SPDX-2.3",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "name": "mn-0.1.2-cargo",
-  "documentNamespace": "urn:mn:spdx:0f241bb25e44bba123ce4d1f55056fcab143b7ca921b259e589ca45b1fa59ff3",
+  "name": "mn-0.2.0-dev.1-cargo",
+  "documentNamespace": "urn:mn:spdx:9bbd7f6bfe81747c47643dcb8e0958f8521477033d5b3a13664f6a74bd1c0829",
   "creationInfo": {
     "created": "2026-11-18T00:00:00Z",
     "creators": [
@@ -11,13 +11,13 @@
     ]
   },
   "documentDescribes": [
-    "SPDXRef-mn-cli-0.1.2"
+    "SPDXRef-mn-cli-0.2.0-dev.1"
   ],
   "packages": [
     {
-      "SPDXID": "SPDXRef-mn-cli-0.1.2",
+      "SPDXID": "SPDXRef-mn-cli-0.2.0-dev.1",
       "name": "mn-cli",
-      "versionInfo": "0.1.2",
+      "versionInfo": "0.2.0-dev.1",
       "downloadLocation": "NOASSERTION",
       "filesAnalyzed": false,
       "licenseConcluded": "NOASSERTION",
@@ -25,9 +25,9 @@
       "licenseDeclared": "MIT OR Apache-2.0"
     },
     {
-      "SPDXID": "SPDXRef-mn-core-0.1.2",
+      "SPDXID": "SPDXRef-mn-core-0.2.0-dev.1",
       "name": "mn-core",
-      "versionInfo": "0.1.2",
+      "versionInfo": "0.2.0-dev.1",
       "downloadLocation": "NOASSERTION",
       "filesAnalyzed": false,
       "licenseConcluded": "NOASSERTION",
@@ -101,22 +101,22 @@
   ],
   "relationships": [
     {
-      "spdxElementId": "SPDXRef-mn-cli-0.1.2",
+      "spdxElementId": "SPDXRef-mn-cli-0.2.0-dev.1",
       "relationshipType": "DEPENDS_ON",
-      "relatedSpdxElement": "SPDXRef-mn-core-0.1.2"
+      "relatedSpdxElement": "SPDXRef-mn-core-0.2.0-dev.1"
     },
     {
-      "spdxElementId": "SPDXRef-mn-core-0.1.2",
+      "spdxElementId": "SPDXRef-mn-core-0.2.0-dev.1",
       "relationshipType": "DEPENDS_ON",
       "relatedSpdxElement": "SPDXRef-unicode-ident-1.0.22"
     },
     {
-      "spdxElementId": "SPDXRef-mn-core-0.1.2",
+      "spdxElementId": "SPDXRef-mn-core-0.2.0-dev.1",
       "relationshipType": "DEPENDS_ON",
       "relatedSpdxElement": "SPDXRef-unicode-normalization-0.1.24"
     },
     {
-      "spdxElementId": "SPDXRef-mn-core-0.1.2",
+      "spdxElementId": "SPDXRef-mn-core-0.2.0-dev.1",
       "relationshipType": "DEPENDS_ON",
       "relatedSpdxElement": "SPDXRef-unicode-script-0.5.8"
     },

@@ -64,5 +64,17 @@
     "exit_code": 0,
     "stdout": "14\n3.5\ntrue\n",
     "stderr": ""
+  },
+  {
+    "file": "examples/conversions.mn",
+    "exit_code": 0,
+    "stdout": "[[6.0]]\n",
+    "stderr": ""
+  },
+  {
+    "file": "examples/conversions_mn.mn",
+    "exit_code": 0,
+    "stdout": "[[6.0]]\n",
+    "stderr": ""
   }
 ]
